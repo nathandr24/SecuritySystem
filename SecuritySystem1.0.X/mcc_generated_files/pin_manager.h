@@ -201,6 +201,298 @@
 #define IO_RA6_SetDigitalOutput() (_TRISA6 = 0)
 /**
   @Summary
+    Sets the GPIO pin, RD1, high using LATD1.
+
+  @Description
+    Sets the GPIO pin, RD1, high using LATD1.
+
+  @Preconditions
+    The RD1 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RD1 high (1)
+    IO_L_DIR_SetHigh();
+    </code>
+
+*/
+#define IO_L_DIR_SetHigh()          (_LATD1 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RD1, low using LATD1.
+
+  @Description
+    Sets the GPIO pin, RD1, low using LATD1.
+
+  @Preconditions
+    The RD1 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RD1 low (0)
+    IO_L_DIR_SetLow();
+    </code>
+
+*/
+#define IO_L_DIR_SetLow()           (_LATD1 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RD1, using LATD1.
+
+  @Description
+    Toggles the GPIO pin, RD1, using LATD1.
+
+  @Preconditions
+    The RD1 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RD1
+    IO_L_DIR_Toggle();
+    </code>
+
+*/
+#define IO_L_DIR_Toggle()           (_LATD1 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RD1.
+
+  @Description
+    Reads the value of the GPIO pin, RD1.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RD1
+    postValue = IO_L_DIR_GetValue();
+    </code>
+
+*/
+#define IO_L_DIR_GetValue()         _RD1
+/**
+  @Summary
+    Configures the GPIO pin, RD1, as an input.
+
+  @Description
+    Configures the GPIO pin, RD1, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RD1 as an input
+    IO_L_DIR_SetDigitalInput();
+    </code>
+
+*/
+#define IO_L_DIR_SetDigitalInput()  (_TRISD1 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RD1, as an output.
+
+  @Description
+    Configures the GPIO pin, RD1, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RD1 as an output
+    IO_L_DIR_SetDigitalOutput();
+    </code>
+
+*/
+#define IO_L_DIR_SetDigitalOutput() (_TRISD1 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RD2, high using LATD2.
+
+  @Description
+    Sets the GPIO pin, RD2, high using LATD2.
+
+  @Preconditions
+    The RD2 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RD2 high (1)
+    IO_L_SLP_SetHigh();
+    </code>
+
+*/
+#define IO_L_SLP_SetHigh()          (_LATD2 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RD2, low using LATD2.
+
+  @Description
+    Sets the GPIO pin, RD2, low using LATD2.
+
+  @Preconditions
+    The RD2 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RD2 low (0)
+    IO_L_SLP_SetLow();
+    </code>
+
+*/
+#define IO_L_SLP_SetLow()           (_LATD2 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RD2, using LATD2.
+
+  @Description
+    Toggles the GPIO pin, RD2, using LATD2.
+
+  @Preconditions
+    The RD2 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RD2
+    IO_L_SLP_Toggle();
+    </code>
+
+*/
+#define IO_L_SLP_Toggle()           (_LATD2 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RD2.
+
+  @Description
+    Reads the value of the GPIO pin, RD2.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RD2
+    postValue = IO_L_SLP_GetValue();
+    </code>
+
+*/
+#define IO_L_SLP_GetValue()         _RD2
+/**
+  @Summary
+    Configures the GPIO pin, RD2, as an input.
+
+  @Description
+    Configures the GPIO pin, RD2, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RD2 as an input
+    IO_L_SLP_SetDigitalInput();
+    </code>
+
+*/
+#define IO_L_SLP_SetDigitalInput()  (_TRISD2 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RD2, as an output.
+
+  @Description
+    Configures the GPIO pin, RD2, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RD2 as an output
+    IO_L_SLP_SetDigitalOutput();
+    </code>
+
+*/
+#define IO_L_SLP_SetDigitalOutput() (_TRISD2 = 0)
+/**
+  @Summary
     Sets the GPIO pin, RE0, high using LATE0.
 
   @Description
