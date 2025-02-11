@@ -5,6 +5,9 @@
 #include "mcc_generated_files/tmr3.h"
 #include "mcc_generated_files/tmr2.h"
 
+#define NUM_OF_WINDOW_STEPS     2000
+#define NUM_OF_LOCK_STEPS       2000
+
 volatile uint8_t other = 0;
 uint16_t timer3Period = 200;  // window motor speed
 uint16_t timer2Period = 200;  // lock motor speed
@@ -92,10 +95,10 @@ void UART1_Receive_CallBack(void)
 {
     uint8_t a = 0;
     a = UART1_Read();
-    if(a == 0)
-        IO_RA6_SetLow();
-    else
-        IO_RA6_SetHigh();
+    if(a == 'A')
+        armFlag = 1;
+    else if(a == 'D')
+        disarmFlag = 1;
 }
 
 void TMR3_CallBack(void)
@@ -150,10 +153,12 @@ void stepLMotor(int16_t steps)
 
 void armSystem(void)
 {
-    
+    stepWMotor(NUM_OF_WINDOW_STEPS);
+    stepLMotor(NUM_OF_LOCK_STEPS);
 }
 
 void disarmSystem(void)
 {
-    
+    stepWMotor(-NUM_OF_WINDOW_STEPS);
+    stepLMotor(-NUM_OF_LOCK_STEPS);
 }
