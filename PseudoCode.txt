@@ -1,0 +1,60 @@
+
+
+
+
+IN TIMER 1 ISR:
+	if "Corrently entered code"
+		set disarmFlag
+	else if "Clicked pound"
+		set armFlag
+		
+
+
+IN UART ISR:
+	if "receive arm command"
+		set armFlag
+	else if "receive disarm command"
+		set disarmFlag
+
+In TIMER 2 ISR:
+	StepsLeft - 1
+	if "StepsLeft is 0"
+		end the timer and thus the OC module
+
+In TIMER 3 ISR:
+	StepsLeft - 1
+	if "StepsLeft is 0"
+		end the timer and thus the OC module
+
+
+IN MAIN FUNCTION:
+	initialize system
+	
+	Loop forever:
+		check state and flags
+		if "arm is necessary"
+			arm system
+		else if "disarm is necessary"
+			disarm system
+
+
+IN ARMSYSTEM function
+	Step Window Motor
+	Step Lock Motor
+
+IN DISARM FUNCTION
+	Step Window Motor
+	Step Lock Motor
+
+IN STEP WINDOW MOTOR FUNCTION
+	TIMER2 START
+	Steps Left = XXXX
+	Sleep Pin High
+
+IN STEP LOCK MOTOR FUNCTION
+	TIMER3 START
+	Steps Left = XXXX
+	Sleep Pin High
+			
+	
+	
