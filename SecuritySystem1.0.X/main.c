@@ -11,7 +11,7 @@ uint16_t timer2Period = 200;  // lock motor speed
 volatile int16_t numOfWStepsLeft = 0;
 volatile int16_t numOfLStepsLeft = 0;
 
-volatile uint16_t systemState = 0; //0 is disarmed while 1 is armed
+volatile uint16_t armStatus = 0; //0 is disarmed while 1 is armed
 volatile uint16_t armFlag = 0;
 volatile uint16_t disarmFlag = 0;
 
@@ -55,7 +55,20 @@ int main(void)
     
     while (1)
     {
-
+        if(armStatus == 0 && disarmFlag == 1)
+            disarmFlag = 0;
+        else if(armStatus == 0 && armFlag == 1)
+        {
+            armSystem();
+            armFlag = 0;
+        }
+        else if(armStatus == 1 && disarmFlag == 1)
+        {
+            disarmSystem();
+            disarmFlag = 0;
+        }
+        else if(armStatus == 1 && armFlag == 1)
+            armFlag = 0;
     }
 
     return 1;
@@ -133,4 +146,14 @@ void stepLMotor(int16_t steps)
 
     TMR2_Counter16BitSet(0);
     TMR2_Start();
+}
+
+void armSystem(void)
+{
+    
+}
+
+void disarmSystem(void)
+{
+    
 }
