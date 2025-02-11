@@ -45,10 +45,10 @@
 // Configuration bits: selected in the GUI
 
 // CONFIG2
-#pragma config POSCMOD = XT    //Primary Oscillator Select->XT Oscillator mode selected
+#pragma config POSCMOD = NONE    //Primary Oscillator Select->Primary oscillator disabled
 #pragma config OSCIOFNC = ON    //Primary Oscillator Output Function->OSC2/CLKO/RC15 functions as port I/O (RC15)
 #pragma config FCKSM = CSDCMD    //Clock Switching and Monitor->Clock switching and Fail-Safe Clock Monitor are disabled
-#pragma config FNOSC = PRIPLL    //Oscillator Select->Primary Oscillator with PLL module (HSPLL, ECPLL)
+#pragma config FNOSC = FRCPLL    //Oscillator Select->Fast RC Oscillator with PLL module (FRCPLL)
 #pragma config IESO = ON    //Internal External Switch Over Mode->IESO mode (Two-Speed Start-up) enabled
 
 // CONFIG1
@@ -65,23 +65,23 @@
 #include "pin_manager.h"
 #include "clock.h"
 #include "system.h"
-#include "tmr1.h"
 #include "tmr3.h"
-#include "tmr2.h"
-#include "drivers/i2c_simple_master.h"
-#include "uart1.h"
 #include "interrupt_manager.h"
 #include "traps.h"
-#include "i2c1_driver.h"
-#include "oc4.h"
-#include "drivers/i2c_master.h"
+#include "tmr1.h"
+#include "tmr2.h"
+#include "drivers/i2c_simple_master.h"
 #include "oc1.h"
+#include "drivers/i2c_master.h"
+#include "oc4.h"
+#include "i2c1_driver.h"
+#include "uart1.h"
 
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    CLOCK_Initialize();
     INTERRUPT_Initialize();
+    CLOCK_Initialize();
     OC4_Initialize();
     UART1_Initialize();
     TMR3_Initialize();

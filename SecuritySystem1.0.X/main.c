@@ -11,8 +11,15 @@ uint16_t timer2Period = 200;  // lock motor speed
 volatile int16_t numOfWStepsLeft = 0;
 volatile int16_t numOfLStepsLeft = 0;
 
+volatile uint16_t systemState = 0; //0 is disarmed while 1 is armed
+volatile uint16_t armFlag = 0;
+volatile uint16_t disarmFlag = 0;
+
 void stepWMotor(int16_t steps); //window motor
 void stepLMotor(int16_t steps); //lock motor
+
+void armSystem(void);
+void disarmSystem(void);
 
 
 int main(void)
@@ -30,13 +37,17 @@ int main(void)
     IO_L_SLP_SetLow();
     IO_L_DIR_SetHigh();
     
+    
 //    
 //    i2c_writeNBytes(0x71, &clearMessage, 1);
 //    i2c_writeNBytes(0x71, &one , 1);
 //    i2c_writeNBytes(0x71, &two, 1);
 //    i2c_writeNBytes(0x71, &three, 1);
 //    TXData = 5; i2c_writeNBytes(0x71, &TXData, 1);
-    
+    UART1_Write(0x76);
+    UART1_Write(0x1);
+    UART1_Write(0x2);
+    UART1_Write(0x79); UART1_Write(0x03); UART1_Write(0xA);
 
     
     stepWMotor(1000);
