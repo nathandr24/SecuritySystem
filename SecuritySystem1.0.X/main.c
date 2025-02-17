@@ -56,13 +56,10 @@ int main(void)
 //    i2c_writeNBytes(0x71, &three, 1);
 //    TXData = 5; i2c_writeNBytes(0x71, &TXData, 1);
     UART1_Write(0x76);
-    UART1_Write(0x1);
-    UART1_Write(0x2);
-    UART1_Write(0x79); UART1_Write(0x03); UART1_Write(0xA);
 
     
     stepWMotor(1000);
-    stepLMotor(10000);
+    stepLMotor(3000);
     
     while (1)
     {
@@ -72,11 +69,13 @@ int main(void)
         {
             armSystem();
             armFlag = 0;
+            armStatus = 1;
         }
         else if(armStatus == 1 && disarmFlag == 1)
         {
             disarmSystem();
             disarmFlag = 0;
+            armStatus = 0;
         }
         else if(armStatus == 1 && armFlag == 1)
             armFlag = 0;
@@ -149,15 +148,16 @@ void TMR1_CallBack(void)
     {
         state = 0;
         passCorrect = 1;
+        UART1_Write(0x76); //clear display
         return;
     }
         
     if(input == 10)     // Time to arm
     {
         armFlag = 1;
+        UART1_Write(0x76); //clear display
         return;
     }
-    
     else if(state == 0 && input == PASS_NUM_1) // First number correctly entered
         state = 1;
     else if(state == 0 && input != PASS_NUM_1) // First number incorrectly entered
@@ -188,6 +188,7 @@ void TMR1_CallBack(void)
     else if(state == 3 && input == PASS_NUM_4) // Fourth number correctly entered
     {
         state = 0;
+        UART1_Write(0xA);UART1_Write(0xA);UART1_Write(0xA);UART1_Write(0xA);
         if(passCorrect)
         {
             disarmFlag = 1;
@@ -196,10 +197,13 @@ void TMR1_CallBack(void)
     }
     else if(state == 3 && input != PASS_NUM_4) // Fourth number incorrectly entered
     {
+        UART1_Write(0xF);UART1_Write(0xF);UART1_Write(0xF);UART1_Write(0xF);
+        
         state = 0;
         passCorrect = 0;
         return;
     }
+    UART1_Write(input);
 
 }
 
