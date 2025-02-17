@@ -8,22 +8,32 @@
 #define NUM_OF_WINDOW_STEPS     2000
 #define NUM_OF_LOCK_STEPS       2000
 
-volatile uint8_t other = 0;
+#define PASS_NUM_1 9
+#define PASS_NUM_2 9
+#define PASS_NUM_3 9
+#define PASS_NUM_4 8
+
 uint16_t timer3Period = 200;  // window motor speed
 uint16_t timer2Period = 200;  // lock motor speed
+
+// Stepper Globals
 volatile int16_t numOfWStepsLeft = 0;
 volatile int16_t numOfLStepsLeft = 0;
 
+// Arming and disarming globals
 volatile uint16_t armStatus = 0; //0 is disarmed while 1 is armed
 volatile uint16_t armFlag = 0;
 volatile uint16_t disarmFlag = 0;
+
+// Keypad Globals
+volatile char state = 0;
+volatile char passCorrect = 1; 
 
 void stepWMotor(int16_t steps); //window motor
 void stepLMotor(int16_t steps); //lock motor
 
 void armSystem(void);
 void disarmSystem(void);
-
 
 int main(void)
 {
@@ -77,16 +87,120 @@ int main(void)
 
 void TMR1_CallBack(void)
 {
-//    if(other)
-//    {
-//        UART1_Write(0x1);
-//        other = 0;
-//    }
-//    else
-//    {
-//        UART1_Write(0x0);
-//        other = 1;
-//    }
+    uint16_t input = 46;
+    
+    // Test column 1
+    IO_COL1_SetHigh();
+    IO_COL2_SetLow();
+    IO_COL3_SetLow();
+    
+    for(int i=0; i<100; i++)
+        Nop();
+    
+    if(IO_ROW1_GetValue())
+        input = 1;
+    else if(IO_ROW2_GetValue())
+        input = 4;
+    else if(IO_ROW3_GetValue())
+        input = 7;
+    else if(IO_ROW4_GetValue())
+        input = 10;
+    
+    // Test column 2
+    IO_COL1_SetLow();
+    IO_COL2_SetHigh();
+    IO_COL3_SetLow();
+    
+    for(int j=0;j<100;j++)
+        Nop();
+    if(IO_ROW1_GetValue())
+        input = 2;
+    else if(IO_ROW2_GetValue())
+        input = 5;
+    else if(IO_ROW3_GetValue())
+        input = 8;
+    else if(IO_ROW4_GetValue())
+        input = 0;
+    
+    // Test column 3
+    IO_COL1_SetLow();
+    IO_COL2_SetLow();
+    IO_COL3_SetHigh();
+    for(int k = 0; k <100; k++)
+        Nop();
+    
+    if(IO_ROW1_GetValue())
+        input = 3;
+    else if(IO_ROW2_GetValue())
+        input = 6;
+    else if(IO_ROW3_GetValue())
+        input = 9;
+    else if(IO_ROW4_GetValue())
+        input = 11;
+    
+    IO_COL1_SetLow();
+    IO_COL2_SetLow();
+    IO_COL3_SetLow();
+
+    
+    if(input == 46)     // If no input then do nothing
+        return;
+    if(input == 11)
+    {
+        state = 0;
+        passCorrect = 1;
+        return;
+    }
+        
+    if(input == 10)     // Time to arm
+    {
+        armFlag = 1;
+        return;
+    }
+    
+    else if(state == 0 && input == PASS_NUM_1) // First number correctly entered
+        state = 1;
+    else if(state == 0 && input != PASS_NUM_1) // First number incorrectly entered
+    {
+        state = 1;
+        passCorrect = 0;
+    }
+    else if(state == 1 && input == PASS_NUM_2) // Second number correctly entered
+    {
+        state = 2;
+        passCorrect &= 1;
+    }
+    else if(state == 1 && input != PASS_NUM_2) // Second number incorrectly entered
+    {
+        state = 2;
+        passCorrect = 0;
+    }
+    else if(state == 2 && input == PASS_NUM_3) // Third number correctly entered
+    {
+        state = 3;
+        passCorrect &= 1;
+    }
+    else if(state == 2 && input != PASS_NUM_3) // Third number incorrectly entered
+    {
+        state = 3;
+        passCorrect = 0;
+    }
+    else if(state == 3 && input == PASS_NUM_4) // Fourth number correctly entered
+    {
+        state = 0;
+        if(passCorrect)
+        {
+            disarmFlag = 1;
+            return;
+        }
+    }
+    else if(state == 3 && input != PASS_NUM_4) // Fourth number incorrectly entered
+    {
+        state = 0;
+        passCorrect = 0;
+        return;
+    }
+
 }
 
 void UART1_Receive_CallBack(void)
