@@ -66,16 +66,16 @@
 #include "clock.h"
 #include "system.h"
 #include "tmr3.h"
-#include "interrupt_manager.h"
-#include "traps.h"
-#include "tmr1.h"
-#include "tmr2.h"
-#include "drivers/i2c_simple_master.h"
 #include "oc1.h"
+#include "tmr2.h"
+#include "tmr1.h"
 #include "drivers/i2c_master.h"
 #include "oc4.h"
-#include "i2c1_driver.h"
 #include "uart1.h"
+#include "interrupt_manager.h"
+#include "traps.h"
+#include "drivers/i2c_simple_master.h"
+#include "i2c1_driver.h"
 
 void SYSTEM_Initialize(void)
 {
