@@ -40,8 +40,6 @@ int main(void)
     IO_L_SLP_SetLow();
     IO_L_DIR_SetHigh();
     
-    
-//    
 //    i2c_writeNBytes(0x71, &clearMessage, 1);
 //    i2c_writeNBytes(0x71, &one , 1);
 //    i2c_writeNBytes(0x71, &two, 1);
