@@ -4,6 +4,7 @@
 #include "mcc_generated_files/drivers/i2c_simple_master.h"
 #include "mcc_generated_files/tmr3.h"
 #include "mcc_generated_files/tmr2.h"
+#include "mcc_generated_files/uart2.h"
 
 #define NUM_OF_WINDOW_STEPS     2000
 #define NUM_OF_LOCK_STEPS       2000
@@ -86,6 +87,7 @@ int main(void)
 
 void TMR1_CallBack(void)
 {
+    UART2_Write('Q');
     uint16_t input = 46;
     
     // Test column 1
@@ -211,6 +213,16 @@ void UART1_Receive_CallBack(void)
 {
     uint8_t a = 0;
     a = UART1_Read();
+    if(a == 'A')
+        armFlag = 1;
+    else if(a == 'D')
+        disarmFlag = 1;
+}
+
+UART2_Receive_CallBack()
+{
+    uint8_t a = 0;
+    a = UART2_Read();
     if(a == 'A')
         armFlag = 1;
     else if(a == 'D')
