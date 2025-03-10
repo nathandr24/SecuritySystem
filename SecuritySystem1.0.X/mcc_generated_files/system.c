@@ -56,7 +56,7 @@
 #pragma config FWPSA = PR128    //WDT Prescaler->Prescaler ratio of 1:128
 #pragma config WINDIS = ON    //Watchdog Timer Window->Standard Watchdog Timer enabled,(Windowed-mode is disabled)
 #pragma config FWDTEN = OFF    //Watchdog Timer Enable->Watchdog Timer is disabled
-#pragma config ICS = PGx2    //Comm Channel Select->Emulator/debugger uses EMUC2/EMUD2
+#pragma config ICS = PGx1    //Comm Channel Select->Emulator/debugger uses EMUC1/EMUD1
 #pragma config BKBUG = OFF    //Background Debug->Device resets into Operational mode
 #pragma config GWRP = OFF    //General Code Segment Write Protect->Writes to program memory are allowed
 #pragma config GCP = OFF    //General Code Segment Code Protect->Code protection is disabled
@@ -65,24 +65,24 @@
 #include "pin_manager.h"
 #include "clock.h"
 #include "system.h"
-#include "i2c1_driver.h"
-#include "drivers/i2c_master.h"
-#include "drivers/i2c_simple_master.h"
-#include "tmr3.h"
-#include "tmr2.h"
-#include "tmr1.h"
-#include "uart2.h"
-#include "uart1.h"
-#include "oc1.h"
-#include "oc4.h"
 #include "interrupt_manager.h"
 #include "traps.h"
+#include "oc4.h"
+#include "drivers/i2c_master.h"
+#include "uart1.h"
+#include "uart2.h"
+#include "oc1.h"
+#include "tmr2.h"
+#include "tmr1.h"
+#include "tmr3.h"
+#include "i2c1_driver.h"
+#include "drivers/i2c_simple_master.h"
 
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    CLOCK_Initialize();
     INTERRUPT_Initialize();
+    CLOCK_Initialize();
     UART2_Initialize();
     OC4_Initialize();
     UART1_Initialize();
