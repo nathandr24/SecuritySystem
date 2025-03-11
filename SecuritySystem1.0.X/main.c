@@ -87,6 +87,28 @@ int main(void)
 
 void TMR1_CallBack(void)
 {
+//    uint8_t address = 0x5E;
+//    uint8_t rawDistance[2];
+//    uint16_t distanceInner;
+//    uint16_t distanceOuter;
+//    
+//    rawDistance[1] = i2c_read1ByteRegister(0x40, address);
+//    address++;
+//    rawDistance[0] = i2c_read1ByteRegister(0x40, address);
+//    
+//    distanceInner = ((uint16_t)rawDistance[1]*16 + rawDistance[0])/16;
+//    
+//    address--;
+//    rawDistance[1] = i2c_read1ByteRegister(0x00, address);
+//    address++;
+//    rawDistance[0] = i2c_read1ByteRegister(0x00, address);
+//    
+//    
+//    distanceOuter = ((uint16_t)rawDistance[1]*16 + rawDistance[0])/16;    
+//    
+//    
+//    if(distanceInner < 25 && distanceOuter < distanceInner)
+//        armFlag = 1;
     UART2_Write('Q');
     uint16_t input = 46;
     

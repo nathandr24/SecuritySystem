@@ -4,11 +4,11 @@ Tool Name:
   c:\program files\microchip\xc16\v2.10\bin\bin\..\bin/elf-ld.exe
 
 Command:
-  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp000009d4.00 \
-  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp000009d4.01 \
-  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp000009d4.02 \
-  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp000009d4.03 \
-  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp000009d4.04 \
+  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp00005b6c.00 \
+  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp00005b6c.01 \
+  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp00005b6c.02 \
+  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp00005b6c.03 \
+  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp00005b6c.04 \
   -p24FJ128GA010 \
   --mdfp=C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC24F-GA-GB_DFP/1.9.336/xc16 \
   -o \
@@ -1005,7 +1005,7 @@ __CONFIG1
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x97b5
+.debug_info       0x000000       0x97b8
  *(.debug_info)
  .debug_info      0x000000        0x2a8 build/default/debug/mcc_generated_files/drivers/uart.o
  .debug_info      0x0002a8        0x630 build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
@@ -1026,13 +1026,13 @@ __CONFIG1
  .debug_info      0x006d25        0x5ba build/default/debug/mcc_generated_files/oc1.o
  .debug_info      0x0072df        0x840 build/default/debug/mcc_generated_files/tmr2.o
  .debug_info      0x007b1f        0xfe7 build/default/debug/mcc_generated_files/uart2.o
- .debug_info      0x008b06        0xb06 build/default/debug/main.o
- .debug_info      0x00960c         0x90 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
- .debug_info      0x00969c         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
- .debug_info      0x009729         0x8c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
+ .debug_info      0x008b06        0xb09 build/default/debug/main.o
+ .debug_info      0x00960f         0x90 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
+ .debug_info      0x00969f         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
+ .debug_info      0x00972c         0x8c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000       0x1835
+.debug_abbrev     0x000000       0x1826
  *(.debug_abbrev)
  .debug_abbrev    0x000000         0x9b build/default/debug/mcc_generated_files/drivers/uart.o
  .debug_abbrev    0x00009b        0x106 build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
@@ -1054,12 +1054,12 @@ __CONFIG1
  .debug_abbrev    0x00110e        0x175 build/default/debug/mcc_generated_files/oc1.o
  .debug_abbrev    0x001283        0x1a2 build/default/debug/mcc_generated_files/tmr2.o
  .debug_abbrev    0x001425        0x240 build/default/debug/mcc_generated_files/uart2.o
- .debug_abbrev    0x001665        0x194 build/default/debug/main.o
- .debug_abbrev    0x0017f9         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
- .debug_abbrev    0x00180d         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
- .debug_abbrev    0x001821         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
+ .debug_abbrev    0x001665        0x185 build/default/debug/main.o
+ .debug_abbrev    0x0017ea         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
+ .debug_abbrev    0x0017fe         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
+ .debug_abbrev    0x001812         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
 
-.debug_line       0x000000       0x1a44
+.debug_line       0x000000       0x1a46
  *(.debug_line)
  .debug_line      0x000000         0x99 build/default/debug/mcc_generated_files/drivers/uart.o
  .debug_line      0x000099        0x149 build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
@@ -1081,10 +1081,10 @@ __CONFIG1
  .debug_line      0x0012f6        0x145 build/default/debug/mcc_generated_files/oc1.o
  .debug_line      0x00143b        0x163 build/default/debug/mcc_generated_files/tmr2.o
  .debug_line      0x00159e        0x207 build/default/debug/mcc_generated_files/uart2.o
- .debug_line      0x0017a5        0x1c2 build/default/debug/main.o
- .debug_line      0x001967         0x59 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
- .debug_line      0x0019c0         0x4a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
- .debug_line      0x001a0a         0x3a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
+ .debug_line      0x0017a5        0x1c4 build/default/debug/main.o
+ .debug_line      0x001969         0x59 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
+ .debug_line      0x0019c2         0x4a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
+ .debug_line      0x001a0c         0x3a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
 
 .debug_frame      0x000000       0x197e
  *(.debug_frame)
