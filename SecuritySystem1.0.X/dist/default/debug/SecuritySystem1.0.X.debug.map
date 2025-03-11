@@ -4,11 +4,11 @@ Tool Name:
   c:\program files\microchip\xc16\v2.10\bin\bin\..\bin/elf-ld.exe
 
 Command:
-  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp000009d4.00 \
-  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp000009d4.01 \
-  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp000009d4.02 \
-  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp000009d4.03 \
-  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp000009d4.04 \
+  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp00003d54.00 \
+  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp00003d54.01 \
+  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp00003d54.02 \
+  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp00003d54.03 \
+  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp00003d54.04 \
   -p24FJ128GA010 \
   --mdfp=C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC24F-GA-GB_DFP/1.9.336/xc16 \
   -o \
@@ -44,6 +44,8 @@ Command:
   build/default/debug/mcc_generated_files/tmr2.o \
   build/default/debug/mcc_generated_files/uart2.o \
   build/default/debug/main.o \
+  build/default/debug/mcc_generated_files/tmr4.o \
+  build/default/debug/mcc_generated_files/delay.o \
   --defsym=__MPLAB_BUILD=1 \
   --defsym=__MPLAB_DEBUG=1 \
   --defsym=__DEBUG=1 \
@@ -153,14 +155,14 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0xe0c          0x1512  (5394)
-.const                      0x100c                0x6a            0x9f  (159)
-.text                       0x1076              0x112a          0x19bf  (6591)
-.dinit                      0x21a0                0xfe           0x17d  (381)
-.text                       0x229e               0x510           0x798  (1944)
-.init.delay32               0x27ae                0x1c            0x2a  (42)
-.text                       0x27ca                0x44            0x66  (102)
+.const                      0x100c                0x6e            0xa5  (165)
+.text                       0x107a              0x116e          0x1a25  (6693)
+.dinit                      0x21e8               0x104           0x186  (390)
+.text                       0x22ec               0x632           0x94b  (2379)
+.init.delay32               0x291e                0x1c            0x2a  (42)
+.text                       0x293a                0x2a            0x3f  (63)
 
-                 Total "program" memory used (bytes):         0x3915  (14613) 11%
+                 Total "program" memory used (bytes):         0x3b16  (15126) 11%
 
 
 "data" Memory  [Origin = 0x800, Length = 0x2000]
@@ -172,20 +174,20 @@ reserve_data_0x820           0x820                 0x2             0x2  (2)
 reserve_data_0x822           0x822                 0x2             0x2  (2)
 reserve_data_0x824           0x824                 0x2             0x2  (2)
 reserve_data_0x826           0x826                0x2a            0x2a  (42)
-.nbss                        0x850                   0            0x2e  (46)
-.ndata                       0x87e                   0             0x6  (6)
-mcc_generated_files/where_was_i.s.scn1     0x884                   0             0x4  (4)
-.ndata                       0x888                   0             0x4  (4)
-.nbss                        0x88c                   0             0xa  (10)
-.data                        0x896                   0            0x42  (66)
-.bss                         0x8d8                   0            0x26  (38)
-.data                        0x8fe                   0            0x20  (32)
-.bss                         0x91e                   0            0x20  (32)
-.data                        0x93e                   0            0x1e  (30)
-.bss                         0x95c                   0            0x3c  (60)
-.data                        0x998                   0             0x2  (2)
+.nbss                        0x850                   0            0x30  (48)
+.ndata                       0x880                   0             0x6  (6)
+mcc_generated_files/where_was_i.s.scn1     0x886                   0             0x4  (4)
+.ndata                       0x88a                   0             0x4  (4)
+.nbss                        0x88e                   0             0xa  (10)
+.data                        0x898                   0            0x42  (66)
+.bss                         0x8da                   0            0x26  (38)
+.data                        0x900                   0            0x20  (32)
+.bss                         0x920                   0            0x20  (32)
+.data                        0x940                   0            0x1e  (30)
+.bss                         0x95e                   0            0x3e  (62)
+.data                        0x99c                   0             0x2  (2)
 
-                 Total "data" memory used (bytes):          0x19a  (410) 5%
+                 Total "data" memory used (bytes):          0x19e  (414) 5%
 
 
 Dynamic Memory Usage
@@ -193,9 +195,9 @@ Dynamic Memory Usage
 region                     address                      maximum length  (dec)
 ------                     -------                      ---------------------
 heap                             0                                   0  (0)
-stack                        0x99a                              0x1e66  (7782)
+stack                        0x99e                              0x1e62  (7778)
 
-                 Maximum dynamic memory (bytes):         0x1e66  (7782)
+                 Maximum dynamic memory (bytes):         0x1e62  (7778)
 
 Info: Project is using a large data memory model when small data memory model is sufficient.
 
@@ -206,59 +208,61 @@ External Symbols in Data Memory (by address):
                     0x085c                  _UART1_RxDefaultInterruptHandler
                     0x0868                  _UART2_TxDefaultInterruptHandler
                     0x086a                  _UART2_RxDefaultInterruptHandler
-                    0x086c                  _numOfWStepsLeft
-                    0x086e                  _numOfLStepsLeft
-                    0x0870                  _armStatus
-                    0x0872                  _armFlag
-                    0x0874                  _disarmFlag
-                    0x0876                  _state
-                    0x0878                  _i2c1_driver_busCollisionISR
-                    0x087a                  _i2c1_driver_Masteri2cISR
-                    0x087c                  _i2c1_driver_Slavei2cISR
-                    0x087e                  _timer3Period
-                    0x0880                  _timer2Period
-                    0x0882                  _passCorrect
-                    0x0884                  _trapSrcAddr
-                    0x0888                  _string
-                    0x088c                  _TMR1_InterruptHandler
-                    0x088e                  _TMR3_InterruptHandler
-                    0x0894                  _TMR2_InterruptHandler
-                    0x0896                  __stdout
-                    0x0898                  ___stdout_used
-                    0x08d8                  _i2c_status
-                    0x08fe                  _fsmStateTable
-                    0x0996                  ___errno_val
-                    0x0998                  ___C30_UART
+                    0x086c                  _test
+                    0x086e                  _numOfWStepsLeft
+                    0x0870                  _numOfLStepsLeft
+                    0x0872                  _armStatus
+                    0x0874                  _armFlag
+                    0x0876                  _disarmFlag
+                    0x0878                  _state
+                    0x087a                  _i2c1_driver_busCollisionISR
+                    0x087c                  _i2c1_driver_Masteri2cISR
+                    0x087e                  _i2c1_driver_Slavei2cISR
+                    0x0880                  _timer3Period
+                    0x0882                  _timer2Period
+                    0x0884                  _passCorrect
+                    0x0886                  _trapSrcAddr
+                    0x088a                  _string
+                    0x088e                  _TMR1_InterruptHandler
+                    0x0890                  _TMR3_InterruptHandler
+                    0x0896                  _TMR2_InterruptHandler
+                    0x0898                  __stdout
+                    0x089a                  ___stdout_used
+                    0x08da                  _i2c_status
+                    0x0900                  _fsmStateTable
+                    0x099a                  ___errno_val
+                    0x099c                  ___C30_UART
 
 External Symbols in Data Memory (by name):
 
-                    0x088c                  _TMR1_InterruptHandler
-                    0x0894                  _TMR2_InterruptHandler
-                    0x088e                  _TMR3_InterruptHandler
+                    0x088e                  _TMR1_InterruptHandler
+                    0x0896                  _TMR2_InterruptHandler
+                    0x0890                  _TMR3_InterruptHandler
                     0x085c                  _UART1_RxDefaultInterruptHandler
                     0x085a                  _UART1_TxDefaultInterruptHandler
                     0x086a                  _UART2_RxDefaultInterruptHandler
                     0x0868                  _UART2_TxDefaultInterruptHandler
-                    0x0998                  ___C30_UART
-                    0x0996                  ___errno_val
-                    0x0898                  ___stdout_used
-                    0x0896                  __stdout
-                    0x0872                  _armFlag
-                    0x0870                  _armStatus
-                    0x0874                  _disarmFlag
-                    0x08fe                  _fsmStateTable
-                    0x087a                  _i2c1_driver_Masteri2cISR
-                    0x087c                  _i2c1_driver_Slavei2cISR
-                    0x0878                  _i2c1_driver_busCollisionISR
-                    0x08d8                  _i2c_status
-                    0x086e                  _numOfLStepsLeft
-                    0x086c                  _numOfWStepsLeft
-                    0x0882                  _passCorrect
-                    0x0876                  _state
-                    0x0888                  _string
-                    0x0880                  _timer2Period
-                    0x087e                  _timer3Period
-                    0x0884                  _trapSrcAddr
+                    0x099c                  ___C30_UART
+                    0x099a                  ___errno_val
+                    0x089a                  ___stdout_used
+                    0x0898                  __stdout
+                    0x0874                  _armFlag
+                    0x0872                  _armStatus
+                    0x0876                  _disarmFlag
+                    0x0900                  _fsmStateTable
+                    0x087c                  _i2c1_driver_Masteri2cISR
+                    0x087e                  _i2c1_driver_Slavei2cISR
+                    0x087a                  _i2c1_driver_busCollisionISR
+                    0x08da                  _i2c_status
+                    0x0870                  _numOfLStepsLeft
+                    0x086e                  _numOfWStepsLeft
+                    0x0884                  _passCorrect
+                    0x0878                  _state
+                    0x088a                  _string
+                    0x086c                  _test
+                    0x0882                  _timer2Period
+                    0x0880                  _timer3Period
+                    0x0886                  _trapSrcAddr
 
 External Symbols in Program Memory (by address):
 
@@ -305,298 +309,324 @@ External Symbols in Program Memory (by address):
                   0x000f20                  ___pop_ptr
                   0x000f98                  ___extendsfdf2
                   0x000fd6                  __funpack
+                  0x001000                  ___mulp32peds3
                   0x001000                  ___mulp32eds3
                   0x001000                  ___mulsi3
-                  0x001000                  ___mulp32peds3
                   0x001066                  _uart
-                  0x001076                  _i2c_setDataCompleteCallback
-                  0x001088                  _i2c_setWriteCollisionCallback
-                  0x00109a                  _i2c_setAddressNACKCallback
-                  0x0010ac                  _i2c_setDataNACKCallback
-                  0x0010be                  _i2c_setTimeOutCallback
-                  0x0010d0                  _i2c_open
-                  0x00114a                  _i2c_setAddress
-                  0x001156                  _i2c_close
-                  0x00117e                  _i2c_setTimeOut
-                  0x00118e                  _i2c_setBuffer
-                  0x0011ae                  _i2c_masterOperation
-                  0x0011ea                  _i2c_masterRead
-                  0x0011f4                  _i2c_masterWrite
-                  0x0011fe                  _i2c_poller
-                  0x001214                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_RESET
-                  0x001228                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_IDLE
-                  0x00123a                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_RESTART_READ
-                  0x001244                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_RESTART_WRITE
-                  0x00124e                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_RESTART
-                  0x001258                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_STOP
-                  0x001262                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_ADR_READ
-                  0x00127e                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_ADR_WRITE
-                  0x001294                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_RCEN
-                  0x0012a4                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_ACK
-                  0x0012ae                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_NACK_STOP
-                  0x0012b8                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_NACK_RESTART
-                  0x0012c2                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_ADDRESS_NACK
-                  0x0012e4                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_TX
-                  0x001330                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_RX
-                  0x00136e                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_TX_EMPTY
-                  0x00139a                  _i2c_ISR
-                  0x0013c2                  _i2c_busCollisionISR
-                  0x0013ca                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_returnStop
-                  0x0013d4                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_returnReset
-                  0x00142a                  _main
-                  0x0014aa                  _TMR1_CallBack
-                  0x0016b2                  _UART1_Receive_CallBack
-                  0x0016da                  _UART2_Receive_CallBack
-                  0x001702                  _TMR3_CallBack
-                  0x001718                  _TMR2_CallBack
-                  0x00172e                  _stepWMotor
-                  0x001752                  _stepLMotor
-                  0x001776                  _armSystem
-                  0x001784                  _disarmSystem
-                  0x001792                  _UART1_Initialize
-                  0x0017c6                  _UART1_SetTxInterruptHandler
-                  0x0017e4                  _UART1_SetRxInterruptHandler
-                  0x001802                  _UART1_Read
-                  0x00182e                  _UART1_Write
-                  0x001858                  _UART1_IsRxReady
-                  0x00186e                  _UART1_IsTxReady
-                  0x0018a2                  _UART1_IsTxDone
-                  0x001930                  _UART1_ReadBuffer
-                  0x00196a                  _UART1_WriteBuffer
-                  0x0019a4                  _UART1_TransferStatusGet
-                  0x0019e8                  _UART1_Peek
-                  0x001a08                  _UART1_ReceiveBufferIsEmpty
-                  0x001a18                  _UART1_TransmitBufferIsFull
-                  0x001a28                  _UART1_StatusGet
-                  0x001a30                  _UART1_TransmitBufferSizeGet
-                  0x001a5e                  _UART1_ReceiveBufferSizeGet
-                  0x001a8c                  _UART1_Enable
-                  0x001a96                  _UART1_Disable
-                  0x001aa0                  _UART2_Initialize
-                  0x001ad4                  _UART2_SetTxInterruptHandler
-                  0x001af2                  _UART2_SetRxInterruptHandler
-                  0x001b10                  _UART2_Read
-                  0x001b3c                  _UART2_Write
-                  0x001b66                  _UART2_IsRxReady
-                  0x001b7c                  _UART2_IsTxReady
-                  0x001bb0                  _UART2_IsTxDone
-                  0x001c3e                  _UART2_ReadBuffer
-                  0x001c78                  _UART2_WriteBuffer
-                  0x001cb2                  _UART2_TransferStatusGet
-                  0x001cf6                  _UART2_Peek
-                  0x001d16                  _UART2_ReceiveBufferIsEmpty
-                  0x001d26                  _UART2_TransmitBufferIsFull
-                  0x001d36                  _UART2_StatusGet
-                  0x001d3e                  _UART2_TransmitBufferSizeGet
-                  0x001d6c                  _UART2_ReceiveBufferSizeGet
-                  0x001d9a                  _UART2_Enable
-                  0x001da4                  _UART2_Disable
-                  0x001dae                  _i2c1_driver_close
-                  0x001db6                  _i2c1_enableIRQ
-                  0x001dc0                  _i2c1_IRQisEnabled
-                  0x001dde                  _i2c1_disableIRQ
-                  0x001de8                  _i2c1_clearIRQ
-                  0x001df2                  _i2c1_setIRQ
-                  0x001dfc                  _i2c1_waitForEvent
-                  0x001e2c                  _i2c1_driver_driver_open
-                  0x001e4c                  _i2c1_driver_initSlaveHardware
-                  0x001e66                  _i2c1_driver_resetBus
-                  0x001e6c                  _i2c1_driver_start
-                  0x001e74                  _i2c1_driver_restart
-                  0x001e7c                  _i2c1_driver_stop
-                  0x001e84                  _i2c1_driver_isNACK
-                  0x001e9c                  _i2c1_driver_startRX
-                  0x001ea4                  _i2c1_driver_getRXData
-                  0x001eae                  _i2c1_driver_TXData
-                  0x001eba                  _i2c1_driver_sendACK
-                  0x001ec4                  _i2c1_driver_sendNACK
-                  0x001ece                  _i2c1_driver_releaseClock
-                  0x001ed6                  _i2c1_driver_isBuferFull
-                  0x001ef4                  _i2c1_driver_isStart
-                  0x001f0c                  _i2c1_driver_isAddress
-                  0x001f22                  _i2c1_driver_isStop
-                  0x001f3a                  _i2c1_driver_isData
-                  0x001f52                  _i2c1_driver_isRead
-                  0x001f6a                  _i2c1_driver_clearBusCollision
-                  0x001f72                  _i2c1_driver_enableStartIRQ
-                  0x001f78                  _i2c1_driver_disableStartIRQ
-                  0x001f7e                  _i2c1_driver_enableStopIRQ
-                  0x001f84                  _i2c1_driver_disableStopIRQ
-                  0x001f8a                  _i2c1_driver_setBusCollisionISR
-                  0x001f96                  _i2c1_driver_setMasterI2cISR
-                  0x001fa2                  _i2c1_driver_setSlaveI2cISR
-                  0x001fae                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_wr1RegCompleteHandler
-                  0x001fc4                  _i2c_write1ByteRegister
-                  0x001ff8                  _i2c_writeNBytes
-                  0x002024                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_rd1RegCompleteHandler
-                  0x00203a                  _i2c_read1ByteRegister
-                  0x00208c                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_rd2RegCompleteHandler
-                  0x0020a2                  _i2c_read2ByteRegister
-                  0x0020da                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_wr2RegCompleteHandler
-                  0x0020f0                  _i2c_write2ByteRegister
-                  0x002124                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_rdBlkRegCompleteHandler
-                  0x00213e                  _i2c_readDataBlock
-                  0x00217a                  _i2c_readNBytes
-                  0x00229e                  _TMR1_Initialize
-                  0x0022c2                  _TMR1_Period16BitSet
-                  0x0022d4                  _TMR1_Period16BitGet
-                  0x0022dc                  _TMR1_Counter16BitSet
-                  0x0022ee                  _TMR1_Counter16BitGet
-                  0x0022fc                  _TMR1_SetInterruptHandler
-                  0x00230c                  _TMR1_Start
-                  0x00231c                  _TMR1_Stop
-                  0x002326                  _TMR1_GetElapsedThenClear
-                  0x00233e                  _TMR1_SoftwareCounterGet
-                  0x00234a                  _TMR1_SoftwareCounterClear
-                  0x002356                  _TMR3_Initialize
-                  0x00237a                  _TMR3_Period16BitSet
-                  0x00238c                  _TMR3_Period16BitGet
-                  0x002394                  _TMR3_Counter16BitSet
-                  0x0023a6                  _TMR3_Counter16BitGet
-                  0x0023b4                  _TMR3_SetInterruptHandler
-                  0x0023c4                  _TMR3_Start
-                  0x0023d4                  _TMR3_Stop
-                  0x0023de                  _TMR3_GetElapsedThenClear
-                  0x0023f6                  _TMR3_SoftwareCounterGet
-                  0x002402                  _TMR3_SoftwareCounterClear
-                  0x00240e                  _TMR2_Initialize
-                  0x002430                  _TMR2_Period16BitSet
-                  0x002442                  _TMR2_Period16BitGet
-                  0x00244a                  _TMR2_Counter16BitSet
-                  0x00245c                  _TMR2_Counter16BitGet
-                  0x00246a                  _TMR2_SetInterruptHandler
-                  0x00247a                  _TMR2_Start
-                  0x00248a                  _TMR2_Stop
-                  0x002494                  _TMR2_GetElapsedThenClear
-                  0x0024ac                  _TMR2_SoftwareCounterGet
-                  0x0024b8                  _TMR2_SoftwareCounterClear
-                  0x0024c4                  _OC4_Initialize
-                  0x0024e2                  _OC4_Tasks
-                  0x0024f6                  _OC4_Start
-                  0x002510                  _OC4_Stop
-                  0x00251e                  _OC4_SecondaryValueSet
-                  0x00252a                  _OC4_PrimaryValueSet
-                  0x002536                  _OC4_IsCompareCycleComplete
-                  0x00254e                  _OC4_FaultStatusGet
-                  0x002574                  _OC1_Initialize
-                  0x002592                  _OC1_Tasks
-                  0x0025a4                  _OC1_Start
-                  0x0025be                  _OC1_Stop
-                  0x0025cc                  _OC1_SecondaryValueSet
-                  0x0025d8                  _OC1_PrimaryValueSet
-                  0x0025e4                  _OC1_IsCompareCycleComplete
-                  0x0025fc                  _OC1_FaultStatusGet
-                  0x002622                  _UART_example_READ
-                  0x00269e                  _INTERRUPT_Initialize
-                  0x002712                  _PIN_MANAGER_Initialize
-                  0x002758                  _CLOCK_Initialize
-                  0x002786                  _i2c_returnStop
-                  0x002790                  _i2c_returnReset
-                  0x00279a                  _i2c_restartWrite
-                  0x0027a4                  _i2c_restartRead
-                  0x0027ae                  ___delay32
-                  0x0027ca                  _SYSTEM_Initialize
-                  0x0027fe                  _where_was_i
+                  0x00107a                  _i2c_setDataCompleteCallback
+                  0x00108c                  _i2c_setWriteCollisionCallback
+                  0x00109e                  _i2c_setAddressNACKCallback
+                  0x0010b0                  _i2c_setDataNACKCallback
+                  0x0010c2                  _i2c_setTimeOutCallback
+                  0x0010d4                  _i2c_open
+                  0x00114e                  _i2c_setAddress
+                  0x00115a                  _i2c_close
+                  0x001182                  _i2c_setTimeOut
+                  0x001192                  _i2c_setBuffer
+                  0x0011b2                  _i2c_masterOperation
+                  0x0011ee                  _i2c_masterRead
+                  0x0011f8                  _i2c_masterWrite
+                  0x001202                  _i2c_poller
+                  0x001218                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_RESET
+                  0x00122c                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_IDLE
+                  0x00123e                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_RESTART_READ
+                  0x001248                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_RESTART_WRITE
+                  0x001252                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_RESTART
+                  0x00125c                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_STOP
+                  0x001266                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_ADR_READ
+                  0x001282                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_ADR_WRITE
+                  0x001298                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_RCEN
+                  0x0012a8                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_ACK
+                  0x0012b2                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_NACK_STOP
+                  0x0012bc                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_NACK_RESTART
+                  0x0012c6                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_ADDRESS_NACK
+                  0x0012e8                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_TX
+                  0x001334                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_RX
+                  0x001372                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_TX_EMPTY
+                  0x00139e                  _i2c_ISR
+                  0x0013c6                  _i2c_busCollisionISR
+                  0x0013ce                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_returnStop
+                  0x0013d8                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_returnReset
+                  0x00142e                  _main
+                  0x0014f2                  _TMR1_CallBack
+                  0x0016fa                  _UART1_Receive_CallBack
+                  0x001722                  _UART2_Receive_CallBack
+                  0x00174a                  _TMR3_CallBack
+                  0x001760                  _TMR2_CallBack
+                  0x001776                  _stepWMotor
+                  0x00179a                  _stepLMotor
+                  0x0017be                  _armSystem
+                  0x0017cc                  _disarmSystem
+                  0x0017da                  _UART1_Initialize
+                  0x00180e                  _UART1_SetTxInterruptHandler
+                  0x00182c                  _UART1_SetRxInterruptHandler
+                  0x00184a                  _UART1_Read
+                  0x001876                  _UART1_Write
+                  0x0018a0                  _UART1_IsRxReady
+                  0x0018b6                  _UART1_IsTxReady
+                  0x0018ea                  _UART1_IsTxDone
+                  0x001978                  _UART1_ReadBuffer
+                  0x0019b2                  _UART1_WriteBuffer
+                  0x0019ec                  _UART1_TransferStatusGet
+                  0x001a30                  _UART1_Peek
+                  0x001a50                  _UART1_ReceiveBufferIsEmpty
+                  0x001a60                  _UART1_TransmitBufferIsFull
+                  0x001a70                  _UART1_StatusGet
+                  0x001a78                  _UART1_TransmitBufferSizeGet
+                  0x001aa6                  _UART1_ReceiveBufferSizeGet
+                  0x001ad4                  _UART1_Enable
+                  0x001ade                  _UART1_Disable
+                  0x001ae8                  _UART2_Initialize
+                  0x001b1c                  _UART2_SetTxInterruptHandler
+                  0x001b3a                  _UART2_SetRxInterruptHandler
+                  0x001b58                  _UART2_Read
+                  0x001b84                  _UART2_Write
+                  0x001bae                  _UART2_IsRxReady
+                  0x001bc4                  _UART2_IsTxReady
+                  0x001bf8                  _UART2_IsTxDone
+                  0x001c86                  _UART2_ReadBuffer
+                  0x001cc0                  _UART2_WriteBuffer
+                  0x001cfa                  _UART2_TransferStatusGet
+                  0x001d3e                  _UART2_Peek
+                  0x001d5e                  _UART2_ReceiveBufferIsEmpty
+                  0x001d6e                  _UART2_TransmitBufferIsFull
+                  0x001d7e                  _UART2_StatusGet
+                  0x001d86                  _UART2_TransmitBufferSizeGet
+                  0x001db4                  _UART2_ReceiveBufferSizeGet
+                  0x001de2                  _UART2_Enable
+                  0x001dec                  _UART2_Disable
+                  0x001df6                  _i2c1_driver_close
+                  0x001dfe                  _i2c1_enableIRQ
+                  0x001e08                  _i2c1_IRQisEnabled
+                  0x001e26                  _i2c1_disableIRQ
+                  0x001e30                  _i2c1_clearIRQ
+                  0x001e3a                  _i2c1_setIRQ
+                  0x001e44                  _i2c1_waitForEvent
+                  0x001e74                  _i2c1_driver_driver_open
+                  0x001e94                  _i2c1_driver_initSlaveHardware
+                  0x001eae                  _i2c1_driver_resetBus
+                  0x001eb4                  _i2c1_driver_start
+                  0x001ebc                  _i2c1_driver_restart
+                  0x001ec4                  _i2c1_driver_stop
+                  0x001ecc                  _i2c1_driver_isNACK
+                  0x001ee4                  _i2c1_driver_startRX
+                  0x001eec                  _i2c1_driver_getRXData
+                  0x001ef6                  _i2c1_driver_TXData
+                  0x001f02                  _i2c1_driver_sendACK
+                  0x001f0c                  _i2c1_driver_sendNACK
+                  0x001f16                  _i2c1_driver_releaseClock
+                  0x001f1e                  _i2c1_driver_isBuferFull
+                  0x001f3c                  _i2c1_driver_isStart
+                  0x001f54                  _i2c1_driver_isAddress
+                  0x001f6a                  _i2c1_driver_isStop
+                  0x001f82                  _i2c1_driver_isData
+                  0x001f9a                  _i2c1_driver_isRead
+                  0x001fb2                  _i2c1_driver_clearBusCollision
+                  0x001fba                  _i2c1_driver_enableStartIRQ
+                  0x001fc0                  _i2c1_driver_disableStartIRQ
+                  0x001fc6                  _i2c1_driver_enableStopIRQ
+                  0x001fcc                  _i2c1_driver_disableStopIRQ
+                  0x001fd2                  _i2c1_driver_setBusCollisionISR
+                  0x001fde                  _i2c1_driver_setMasterI2cISR
+                  0x001fea                  _i2c1_driver_setSlaveI2cISR
+                  0x001ff6                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_wr1RegCompleteHandler
+                  0x00200c                  _i2c_write1ByteRegister
+                  0x002040                  _i2c_writeNBytes
+                  0x00206c                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_rd1RegCompleteHandler
+                  0x002082                  _i2c_read1ByteRegister
+                  0x0020d4                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_rd2RegCompleteHandler
+                  0x0020ea                  _i2c_read2ByteRegister
+                  0x002122                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_wr2RegCompleteHandler
+                  0x002138                  _i2c_write2ByteRegister
+                  0x00216c                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_rdBlkRegCompleteHandler
+                  0x002186                  _i2c_readDataBlock
+                  0x0021c2                  _i2c_readNBytes
+                  0x0022ec                  _TMR1_Initialize
+                  0x002310                  _TMR1_Period16BitSet
+                  0x002322                  _TMR1_Period16BitGet
+                  0x00232a                  _TMR1_Counter16BitSet
+                  0x00233c                  _TMR1_Counter16BitGet
+                  0x00234a                  _TMR1_SetInterruptHandler
+                  0x00235a                  _TMR1_Start
+                  0x00236a                  _TMR1_Stop
+                  0x002374                  _TMR1_GetElapsedThenClear
+                  0x00238c                  _TMR1_SoftwareCounterGet
+                  0x002398                  _TMR1_SoftwareCounterClear
+                  0x0023a4                  _TMR3_Initialize
+                  0x0023c8                  _TMR3_Period16BitSet
+                  0x0023da                  _TMR3_Period16BitGet
+                  0x0023e2                  _TMR3_Counter16BitSet
+                  0x0023f4                  _TMR3_Counter16BitGet
+                  0x002402                  _TMR3_SetInterruptHandler
+                  0x002412                  _TMR3_Start
+                  0x002422                  _TMR3_Stop
+                  0x00242c                  _TMR3_GetElapsedThenClear
+                  0x002444                  _TMR3_SoftwareCounterGet
+                  0x002450                  _TMR3_SoftwareCounterClear
+                  0x00245c                  _TMR2_Initialize
+                  0x00247e                  _TMR2_Period16BitSet
+                  0x002490                  _TMR2_Period16BitGet
+                  0x002498                  _TMR2_Counter16BitSet
+                  0x0024aa                  _TMR2_Counter16BitGet
+                  0x0024b8                  _TMR2_SetInterruptHandler
+                  0x0024c8                  _TMR2_Start
+                  0x0024d8                  _TMR2_Stop
+                  0x0024e2                  _TMR2_GetElapsedThenClear
+                  0x0024fa                  _TMR2_SoftwareCounterGet
+                  0x002506                  _TMR2_SoftwareCounterClear
+                  0x002512                  _OC4_Initialize
+                  0x002530                  _OC4_Tasks
+                  0x002544                  _OC4_Start
+                  0x00255e                  _OC4_Stop
+                  0x00256c                  _OC4_SecondaryValueSet
+                  0x002578                  _OC4_PrimaryValueSet
+                  0x002584                  _OC4_IsCompareCycleComplete
+                  0x00259c                  _OC4_FaultStatusGet
+                  0x0025c2                  _TMR4_Initialize
+                  0x0025d6                  _TMR4_Tasks_16BitOperation
+                  0x0025f8                  _TMR4_Period16BitSet
+                  0x00260a                  _TMR4_Period16BitGet
+                  0x002612                  _TMR4_Counter16BitSet
+                  0x002624                  _TMR4_Counter16BitGet
+                  0x00262c                  _TMR4_Start
+                  0x00263a                  _TMR4_Stop
+                  0x002642                  _TMR4_GetElapsedThenClear
+                  0x00265a                  _TMR4_SoftwareCounterGet
+                  0x002666                  _TMR4_SoftwareCounterClear
+                  0x002672                  _OC1_Initialize
+                  0x002690                  _OC1_Tasks
+                  0x0026a2                  _OC1_Start
+                  0x0026bc                  _OC1_Stop
+                  0x0026ca                  _OC1_SecondaryValueSet
+                  0x0026d6                  _OC1_PrimaryValueSet
+                  0x0026e2                  _OC1_IsCompareCycleComplete
+                  0x0026fa                  _OC1_FaultStatusGet
+                  0x002720                  _UART_example_READ
+                  0x00279c                  _INTERRUPT_Initialize
+                  0x002810                  _DELAY_milliseconds
+                  0x002832                  _DELAY_microseconds
+                  0x002866                  _PIN_MANAGER_Initialize
+                  0x0028ac                  _CLOCK_Initialize
+                  0x0028da                  _i2c_returnStop
+                  0x0028e4                  _i2c_returnReset
+                  0x0028ee                  _i2c_restartWrite
+                  0x0028f8                  _i2c_restartRead
+                  0x002902                  _SYSTEM_Initialize
+                  0x00291e                  ___delay32
+                  0x002954                  _where_was_i
 
 External Symbols in Program Memory (by name):
 
-                  0x002758                  _CLOCK_Initialize
-                  0x00269e                  _INTERRUPT_Initialize
-                  0x0025fc                  _OC1_FaultStatusGet
-                  0x002574                  _OC1_Initialize
-                  0x0025e4                  _OC1_IsCompareCycleComplete
-                  0x0025d8                  _OC1_PrimaryValueSet
-                  0x0025cc                  _OC1_SecondaryValueSet
-                  0x0025a4                  _OC1_Start
-                  0x0025be                  _OC1_Stop
-                  0x002592                  _OC1_Tasks
-                  0x00254e                  _OC4_FaultStatusGet
-                  0x0024c4                  _OC4_Initialize
-                  0x002536                  _OC4_IsCompareCycleComplete
-                  0x00252a                  _OC4_PrimaryValueSet
-                  0x00251e                  _OC4_SecondaryValueSet
-                  0x0024f6                  _OC4_Start
-                  0x002510                  _OC4_Stop
-                  0x0024e2                  _OC4_Tasks
-                  0x002712                  _PIN_MANAGER_Initialize
-                  0x0027ca                  _SYSTEM_Initialize
-                  0x0014aa                  _TMR1_CallBack
-                  0x0022ee                  _TMR1_Counter16BitGet
-                  0x0022dc                  _TMR1_Counter16BitSet
-                  0x002326                  _TMR1_GetElapsedThenClear
-                  0x00229e                  _TMR1_Initialize
-                  0x0022d4                  _TMR1_Period16BitGet
-                  0x0022c2                  _TMR1_Period16BitSet
-                  0x0022fc                  _TMR1_SetInterruptHandler
-                  0x00234a                  _TMR1_SoftwareCounterClear
-                  0x00233e                  _TMR1_SoftwareCounterGet
-                  0x00230c                  _TMR1_Start
-                  0x00231c                  _TMR1_Stop
-                  0x001718                  _TMR2_CallBack
-                  0x00245c                  _TMR2_Counter16BitGet
-                  0x00244a                  _TMR2_Counter16BitSet
-                  0x002494                  _TMR2_GetElapsedThenClear
-                  0x00240e                  _TMR2_Initialize
-                  0x002442                  _TMR2_Period16BitGet
-                  0x002430                  _TMR2_Period16BitSet
-                  0x00246a                  _TMR2_SetInterruptHandler
-                  0x0024b8                  _TMR2_SoftwareCounterClear
-                  0x0024ac                  _TMR2_SoftwareCounterGet
-                  0x00247a                  _TMR2_Start
-                  0x00248a                  _TMR2_Stop
-                  0x001702                  _TMR3_CallBack
-                  0x0023a6                  _TMR3_Counter16BitGet
-                  0x002394                  _TMR3_Counter16BitSet
-                  0x0023de                  _TMR3_GetElapsedThenClear
-                  0x002356                  _TMR3_Initialize
-                  0x00238c                  _TMR3_Period16BitGet
-                  0x00237a                  _TMR3_Period16BitSet
-                  0x0023b4                  _TMR3_SetInterruptHandler
-                  0x002402                  _TMR3_SoftwareCounterClear
-                  0x0023f6                  _TMR3_SoftwareCounterGet
-                  0x0023c4                  _TMR3_Start
-                  0x0023d4                  _TMR3_Stop
-                  0x001a96                  _UART1_Disable
-                  0x001a8c                  _UART1_Enable
-                  0x001792                  _UART1_Initialize
-                  0x001858                  _UART1_IsRxReady
-                  0x0018a2                  _UART1_IsTxDone
-                  0x00186e                  _UART1_IsTxReady
-                  0x0019e8                  _UART1_Peek
-                  0x001802                  _UART1_Read
-                  0x001930                  _UART1_ReadBuffer
-                  0x001a08                  _UART1_ReceiveBufferIsEmpty
-                  0x001a5e                  _UART1_ReceiveBufferSizeGet
-                  0x0016b2                  _UART1_Receive_CallBack
-                  0x0017e4                  _UART1_SetRxInterruptHandler
-                  0x0017c6                  _UART1_SetTxInterruptHandler
-                  0x001a28                  _UART1_StatusGet
-                  0x0019a4                  _UART1_TransferStatusGet
-                  0x001a18                  _UART1_TransmitBufferIsFull
-                  0x001a30                  _UART1_TransmitBufferSizeGet
-                  0x00182e                  _UART1_Write
-                  0x00196a                  _UART1_WriteBuffer
-                  0x001da4                  _UART2_Disable
-                  0x001d9a                  _UART2_Enable
-                  0x001aa0                  _UART2_Initialize
-                  0x001b66                  _UART2_IsRxReady
-                  0x001bb0                  _UART2_IsTxDone
-                  0x001b7c                  _UART2_IsTxReady
-                  0x001cf6                  _UART2_Peek
-                  0x001b10                  _UART2_Read
-                  0x001c3e                  _UART2_ReadBuffer
-                  0x001d16                  _UART2_ReceiveBufferIsEmpty
-                  0x001d6c                  _UART2_ReceiveBufferSizeGet
-                  0x0016da                  _UART2_Receive_CallBack
-                  0x001af2                  _UART2_SetRxInterruptHandler
-                  0x001ad4                  _UART2_SetTxInterruptHandler
-                  0x001d36                  _UART2_StatusGet
-                  0x001cb2                  _UART2_TransferStatusGet
-                  0x001d26                  _UART2_TransmitBufferIsFull
-                  0x001d3e                  _UART2_TransmitBufferSizeGet
-                  0x001b3c                  _UART2_Write
-                  0x001c78                  _UART2_WriteBuffer
-                  0x002622                  _UART_example_READ
+                  0x0028ac                  _CLOCK_Initialize
+                  0x002832                  _DELAY_microseconds
+                  0x002810                  _DELAY_milliseconds
+                  0x00279c                  _INTERRUPT_Initialize
+                  0x0026fa                  _OC1_FaultStatusGet
+                  0x002672                  _OC1_Initialize
+                  0x0026e2                  _OC1_IsCompareCycleComplete
+                  0x0026d6                  _OC1_PrimaryValueSet
+                  0x0026ca                  _OC1_SecondaryValueSet
+                  0x0026a2                  _OC1_Start
+                  0x0026bc                  _OC1_Stop
+                  0x002690                  _OC1_Tasks
+                  0x00259c                  _OC4_FaultStatusGet
+                  0x002512                  _OC4_Initialize
+                  0x002584                  _OC4_IsCompareCycleComplete
+                  0x002578                  _OC4_PrimaryValueSet
+                  0x00256c                  _OC4_SecondaryValueSet
+                  0x002544                  _OC4_Start
+                  0x00255e                  _OC4_Stop
+                  0x002530                  _OC4_Tasks
+                  0x002866                  _PIN_MANAGER_Initialize
+                  0x002902                  _SYSTEM_Initialize
+                  0x0014f2                  _TMR1_CallBack
+                  0x00233c                  _TMR1_Counter16BitGet
+                  0x00232a                  _TMR1_Counter16BitSet
+                  0x002374                  _TMR1_GetElapsedThenClear
+                  0x0022ec                  _TMR1_Initialize
+                  0x002322                  _TMR1_Period16BitGet
+                  0x002310                  _TMR1_Period16BitSet
+                  0x00234a                  _TMR1_SetInterruptHandler
+                  0x002398                  _TMR1_SoftwareCounterClear
+                  0x00238c                  _TMR1_SoftwareCounterGet
+                  0x00235a                  _TMR1_Start
+                  0x00236a                  _TMR1_Stop
+                  0x001760                  _TMR2_CallBack
+                  0x0024aa                  _TMR2_Counter16BitGet
+                  0x002498                  _TMR2_Counter16BitSet
+                  0x0024e2                  _TMR2_GetElapsedThenClear
+                  0x00245c                  _TMR2_Initialize
+                  0x002490                  _TMR2_Period16BitGet
+                  0x00247e                  _TMR2_Period16BitSet
+                  0x0024b8                  _TMR2_SetInterruptHandler
+                  0x002506                  _TMR2_SoftwareCounterClear
+                  0x0024fa                  _TMR2_SoftwareCounterGet
+                  0x0024c8                  _TMR2_Start
+                  0x0024d8                  _TMR2_Stop
+                  0x00174a                  _TMR3_CallBack
+                  0x0023f4                  _TMR3_Counter16BitGet
+                  0x0023e2                  _TMR3_Counter16BitSet
+                  0x00242c                  _TMR3_GetElapsedThenClear
+                  0x0023a4                  _TMR3_Initialize
+                  0x0023da                  _TMR3_Period16BitGet
+                  0x0023c8                  _TMR3_Period16BitSet
+                  0x002402                  _TMR3_SetInterruptHandler
+                  0x002450                  _TMR3_SoftwareCounterClear
+                  0x002444                  _TMR3_SoftwareCounterGet
+                  0x002412                  _TMR3_Start
+                  0x002422                  _TMR3_Stop
+                  0x002624                  _TMR4_Counter16BitGet
+                  0x002612                  _TMR4_Counter16BitSet
+                  0x002642                  _TMR4_GetElapsedThenClear
+                  0x0025c2                  _TMR4_Initialize
+                  0x00260a                  _TMR4_Period16BitGet
+                  0x0025f8                  _TMR4_Period16BitSet
+                  0x002666                  _TMR4_SoftwareCounterClear
+                  0x00265a                  _TMR4_SoftwareCounterGet
+                  0x00262c                  _TMR4_Start
+                  0x00263a                  _TMR4_Stop
+                  0x0025d6                  _TMR4_Tasks_16BitOperation
+                  0x001ade                  _UART1_Disable
+                  0x001ad4                  _UART1_Enable
+                  0x0017da                  _UART1_Initialize
+                  0x0018a0                  _UART1_IsRxReady
+                  0x0018ea                  _UART1_IsTxDone
+                  0x0018b6                  _UART1_IsTxReady
+                  0x001a30                  _UART1_Peek
+                  0x00184a                  _UART1_Read
+                  0x001978                  _UART1_ReadBuffer
+                  0x001a50                  _UART1_ReceiveBufferIsEmpty
+                  0x001aa6                  _UART1_ReceiveBufferSizeGet
+                  0x0016fa                  _UART1_Receive_CallBack
+                  0x00182c                  _UART1_SetRxInterruptHandler
+                  0x00180e                  _UART1_SetTxInterruptHandler
+                  0x001a70                  _UART1_StatusGet
+                  0x0019ec                  _UART1_TransferStatusGet
+                  0x001a60                  _UART1_TransmitBufferIsFull
+                  0x001a78                  _UART1_TransmitBufferSizeGet
+                  0x001876                  _UART1_Write
+                  0x0019b2                  _UART1_WriteBuffer
+                  0x001dec                  _UART2_Disable
+                  0x001de2                  _UART2_Enable
+                  0x001ae8                  _UART2_Initialize
+                  0x001bae                  _UART2_IsRxReady
+                  0x001bf8                  _UART2_IsTxDone
+                  0x001bc4                  _UART2_IsTxReady
+                  0x001d3e                  _UART2_Peek
+                  0x001b58                  _UART2_Read
+                  0x001c86                  _UART2_ReadBuffer
+                  0x001d5e                  _UART2_ReceiveBufferIsEmpty
+                  0x001db4                  _UART2_ReceiveBufferSizeGet
+                  0x001722                  _UART2_Receive_CallBack
+                  0x001b3a                  _UART2_SetRxInterruptHandler
+                  0x001b1c                  _UART2_SetTxInterruptHandler
+                  0x001d7e                  _UART2_StatusGet
+                  0x001cfa                  _UART2_TransferStatusGet
+                  0x001d6e                  _UART2_TransmitBufferIsFull
+                  0x001d86                  _UART2_TransmitBufferSizeGet
+                  0x001b84                  _UART2_Write
+                  0x001cc0                  _UART2_WriteBuffer
+                  0x002720                  _UART_example_READ
                   0x000688                  __DefaultInterrupt
                   0x000508                  __MI2C1Interrupt
                   0x000526                  __SI2C1Interrupt
@@ -609,7 +639,7 @@ External Symbols in Program Memory (by name):
                   0x000672                  __U2ErrInterrupt
                   0x00060c                  __U2RXInterrupt
                   0x0005b0                  __U2TXInterrupt
-                  0x0027ae                  ___delay32
+                  0x00291e                  ___delay32
                   0x000f98                  ___extendsfdf2
                   0x000812                  ___fmt_s
                   0x00095c                  ___fmt_state
@@ -637,104 +667,104 @@ External Symbols in Program Memory (by name):
                   0x000fd6                  __funpack
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x001776                  _armSystem
+                  0x0017be                  _armSystem
                   0x000d4a                  _atoi
-                  0x001784                  _disarmSystem
-                  0x001dc0                  _i2c1_IRQisEnabled
-                  0x001de8                  _i2c1_clearIRQ
-                  0x001dde                  _i2c1_disableIRQ
-                  0x001eae                  _i2c1_driver_TXData
-                  0x001f6a                  _i2c1_driver_clearBusCollision
-                  0x001dae                  _i2c1_driver_close
-                  0x001f78                  _i2c1_driver_disableStartIRQ
-                  0x001f84                  _i2c1_driver_disableStopIRQ
-                  0x001e2c                  _i2c1_driver_driver_open
-                  0x001f72                  _i2c1_driver_enableStartIRQ
-                  0x001f7e                  _i2c1_driver_enableStopIRQ
-                  0x001ea4                  _i2c1_driver_getRXData
-                  0x001e4c                  _i2c1_driver_initSlaveHardware
-                  0x001f0c                  _i2c1_driver_isAddress
-                  0x001ed6                  _i2c1_driver_isBuferFull
-                  0x001f3a                  _i2c1_driver_isData
-                  0x001e84                  _i2c1_driver_isNACK
-                  0x001f52                  _i2c1_driver_isRead
-                  0x001ef4                  _i2c1_driver_isStart
-                  0x001f22                  _i2c1_driver_isStop
-                  0x001ece                  _i2c1_driver_releaseClock
-                  0x001e66                  _i2c1_driver_resetBus
-                  0x001e74                  _i2c1_driver_restart
-                  0x001eba                  _i2c1_driver_sendACK
-                  0x001ec4                  _i2c1_driver_sendNACK
-                  0x001f8a                  _i2c1_driver_setBusCollisionISR
-                  0x001f96                  _i2c1_driver_setMasterI2cISR
-                  0x001fa2                  _i2c1_driver_setSlaveI2cISR
-                  0x001e6c                  _i2c1_driver_start
-                  0x001e9c                  _i2c1_driver_startRX
-                  0x001e7c                  _i2c1_driver_stop
-                  0x001db6                  _i2c1_enableIRQ
-                  0x001df2                  _i2c1_setIRQ
-                  0x001dfc                  _i2c1_waitForEvent
-                  0x00139a                  _i2c_ISR
-                  0x0013c2                  _i2c_busCollisionISR
-                  0x001156                  _i2c_close
-                  0x0011ae                  _i2c_masterOperation
-                  0x0011ea                  _i2c_masterRead
-                  0x0011f4                  _i2c_masterWrite
-                  0x0010d0                  _i2c_open
-                  0x0011fe                  _i2c_poller
-                  0x00203a                  _i2c_read1ByteRegister
-                  0x0020a2                  _i2c_read2ByteRegister
-                  0x00213e                  _i2c_readDataBlock
-                  0x00217a                  _i2c_readNBytes
-                  0x0027a4                  _i2c_restartRead
-                  0x00279a                  _i2c_restartWrite
-                  0x002790                  _i2c_returnReset
-                  0x002786                  _i2c_returnStop
-                  0x00114a                  _i2c_setAddress
-                  0x00109a                  _i2c_setAddressNACKCallback
-                  0x00118e                  _i2c_setBuffer
-                  0x001076                  _i2c_setDataCompleteCallback
-                  0x0010ac                  _i2c_setDataNACKCallback
-                  0x00117e                  _i2c_setTimeOut
-                  0x0010be                  _i2c_setTimeOutCallback
-                  0x001088                  _i2c_setWriteCollisionCallback
-                  0x001fc4                  _i2c_write1ByteRegister
-                  0x0020f0                  _i2c_write2ByteRegister
-                  0x001ff8                  _i2c_writeNBytes
-                  0x00142a                  _main
+                  0x0017cc                  _disarmSystem
+                  0x001e08                  _i2c1_IRQisEnabled
+                  0x001e30                  _i2c1_clearIRQ
+                  0x001e26                  _i2c1_disableIRQ
+                  0x001ef6                  _i2c1_driver_TXData
+                  0x001fb2                  _i2c1_driver_clearBusCollision
+                  0x001df6                  _i2c1_driver_close
+                  0x001fc0                  _i2c1_driver_disableStartIRQ
+                  0x001fcc                  _i2c1_driver_disableStopIRQ
+                  0x001e74                  _i2c1_driver_driver_open
+                  0x001fba                  _i2c1_driver_enableStartIRQ
+                  0x001fc6                  _i2c1_driver_enableStopIRQ
+                  0x001eec                  _i2c1_driver_getRXData
+                  0x001e94                  _i2c1_driver_initSlaveHardware
+                  0x001f54                  _i2c1_driver_isAddress
+                  0x001f1e                  _i2c1_driver_isBuferFull
+                  0x001f82                  _i2c1_driver_isData
+                  0x001ecc                  _i2c1_driver_isNACK
+                  0x001f9a                  _i2c1_driver_isRead
+                  0x001f3c                  _i2c1_driver_isStart
+                  0x001f6a                  _i2c1_driver_isStop
+                  0x001f16                  _i2c1_driver_releaseClock
+                  0x001eae                  _i2c1_driver_resetBus
+                  0x001ebc                  _i2c1_driver_restart
+                  0x001f02                  _i2c1_driver_sendACK
+                  0x001f0c                  _i2c1_driver_sendNACK
+                  0x001fd2                  _i2c1_driver_setBusCollisionISR
+                  0x001fde                  _i2c1_driver_setMasterI2cISR
+                  0x001fea                  _i2c1_driver_setSlaveI2cISR
+                  0x001eb4                  _i2c1_driver_start
+                  0x001ee4                  _i2c1_driver_startRX
+                  0x001ec4                  _i2c1_driver_stop
+                  0x001dfe                  _i2c1_enableIRQ
+                  0x001e3a                  _i2c1_setIRQ
+                  0x001e44                  _i2c1_waitForEvent
+                  0x00139e                  _i2c_ISR
+                  0x0013c6                  _i2c_busCollisionISR
+                  0x00115a                  _i2c_close
+                  0x0011b2                  _i2c_masterOperation
+                  0x0011ee                  _i2c_masterRead
+                  0x0011f8                  _i2c_masterWrite
+                  0x0010d4                  _i2c_open
+                  0x001202                  _i2c_poller
+                  0x002082                  _i2c_read1ByteRegister
+                  0x0020ea                  _i2c_read2ByteRegister
+                  0x002186                  _i2c_readDataBlock
+                  0x0021c2                  _i2c_readNBytes
+                  0x0028f8                  _i2c_restartRead
+                  0x0028ee                  _i2c_restartWrite
+                  0x0028e4                  _i2c_returnReset
+                  0x0028da                  _i2c_returnStop
+                  0x00114e                  _i2c_setAddress
+                  0x00109e                  _i2c_setAddressNACKCallback
+                  0x001192                  _i2c_setBuffer
+                  0x00107a                  _i2c_setDataCompleteCallback
+                  0x0010b0                  _i2c_setDataNACKCallback
+                  0x001182                  _i2c_setTimeOut
+                  0x0010c2                  _i2c_setTimeOutCallback
+                  0x00108c                  _i2c_setWriteCollisionCallback
+                  0x00200c                  _i2c_write1ByteRegister
+                  0x002138                  _i2c_write2ByteRegister
+                  0x002040                  _i2c_writeNBytes
+                  0x00142e                  _main
                   0x000da2                  _memcpy
                   0x000736                  _memset
                   0x000dde                  _putc
                   0x0007fe                  _putchar
-                  0x001752                  _stepLMotor
-                  0x00172e                  _stepWMotor
+                  0x00179a                  _stepLMotor
+                  0x001776                  _stepWMotor
                   0x000de0                  _strlen
                   0x000e24                  _tolower
                   0x001066                  _uart
-                  0x0027fe                  _where_was_i
-                  0x0012a4                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_ACK
-                  0x0012c2                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_ADDRESS_NACK
-                  0x0012b8                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_NACK_RESTART
-                  0x0012ae                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_NACK_STOP
-                  0x001228                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_IDLE
-                  0x001294                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_RCEN
-                  0x001214                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_RESET
-                  0x001330                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_RX
-                  0x001262                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_ADR_READ
-                  0x00127e                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_ADR_WRITE
-                  0x00124e                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_RESTART
-                  0x00123a                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_RESTART_READ
-                  0x001244                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_RESTART_WRITE
-                  0x001258                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_STOP
-                  0x0012e4                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_TX
-                  0x00136e                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_TX_EMPTY
-                  0x0013d4                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_returnReset
-                  0x0013ca                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_returnStop
-                  0x002024                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_rd1RegCompleteHandler
-                  0x00208c                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_rd2RegCompleteHandler
-                  0x002124                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_rdBlkRegCompleteHandler
-                  0x001fae                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_wr1RegCompleteHandler
-                  0x0020da                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_wr2RegCompleteHandler
+                  0x002954                  _where_was_i
+                  0x0012a8                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_ACK
+                  0x0012c6                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_ADDRESS_NACK
+                  0x0012bc                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_NACK_RESTART
+                  0x0012b2                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_NACK_STOP
+                  0x00122c                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_IDLE
+                  0x001298                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_RCEN
+                  0x001218                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_RESET
+                  0x001334                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_RX
+                  0x001266                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_ADR_READ
+                  0x001282                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_ADR_WRITE
+                  0x001252                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_RESTART
+                  0x00123e                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_RESTART_READ
+                  0x001248                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_RESTART_WRITE
+                  0x00125c                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_STOP
+                  0x0012e8                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_TX
+                  0x001372                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_TX_EMPTY
+                  0x0013d8                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_returnReset
+                  0x0013ce                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_returnStop
+                  0x00206c                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_rd1RegCompleteHandler
+                  0x0020d4                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_rd2RegCompleteHandler
+                  0x00216c                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_rdBlkRegCompleteHandler
+                  0x001ff6                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_wr1RegCompleteHandler
+                  0x002122                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_wr2RegCompleteHandler
 
 Memory Configuration
 
@@ -797,6 +827,8 @@ LOAD build/default/debug/mcc_generated_files/oc1.o
 LOAD build/default/debug/mcc_generated_files/tmr2.o
 LOAD build/default/debug/mcc_generated_files/uart2.o
 LOAD build/default/debug/main.o
+LOAD build/default/debug/mcc_generated_files/tmr4.o
+LOAD build/default/debug/mcc_generated_files/delay.o
                     0x0001                  __MPLAB_BUILD = 0x1
                     0x0001                  __MPLAB_DEBUG = 0x1
                     0x0001                  __DEBUG = 0x1
@@ -1005,7 +1037,7 @@ __CONFIG1
 .comment
  *(.comment)
 
-.debug_info       0x000000       0x97b5
+.debug_info       0x000000       0xa053
  *(.debug_info)
  .debug_info      0x000000        0x2a8 build/default/debug/mcc_generated_files/drivers/uart.o
  .debug_info      0x0002a8        0x630 build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
@@ -1026,13 +1058,15 @@ __CONFIG1
  .debug_info      0x006d25        0x5ba build/default/debug/mcc_generated_files/oc1.o
  .debug_info      0x0072df        0x840 build/default/debug/mcc_generated_files/tmr2.o
  .debug_info      0x007b1f        0xfe7 build/default/debug/mcc_generated_files/uart2.o
- .debug_info      0x008b06        0xb06 build/default/debug/main.o
- .debug_info      0x00960c         0x90 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
- .debug_info      0x00969c         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
- .debug_info      0x009729         0x8c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
+ .debug_info      0x008b06        0xb50 build/default/debug/main.o
+ .debug_info      0x009656        0x66d build/default/debug/mcc_generated_files/tmr4.o
+ .debug_info      0x009cc3        0x1e7 build/default/debug/mcc_generated_files/delay.o
+ .debug_info      0x009eaa         0x90 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
+ .debug_info      0x009f3a         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
+ .debug_info      0x009fc7         0x8c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev     0x000000       0x1835
+.debug_abbrev     0x000000       0x19e7
  *(.debug_abbrev)
  .debug_abbrev    0x000000         0x9b build/default/debug/mcc_generated_files/drivers/uart.o
  .debug_abbrev    0x00009b        0x106 build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
@@ -1054,12 +1088,14 @@ __CONFIG1
  .debug_abbrev    0x00110e        0x175 build/default/debug/mcc_generated_files/oc1.o
  .debug_abbrev    0x001283        0x1a2 build/default/debug/mcc_generated_files/tmr2.o
  .debug_abbrev    0x001425        0x240 build/default/debug/mcc_generated_files/uart2.o
- .debug_abbrev    0x001665        0x194 build/default/debug/main.o
- .debug_abbrev    0x0017f9         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
- .debug_abbrev    0x00180d         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
- .debug_abbrev    0x001821         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
+ .debug_abbrev    0x001665        0x182 build/default/debug/main.o
+ .debug_abbrev    0x0017e7        0x15d build/default/debug/mcc_generated_files/tmr4.o
+ .debug_abbrev    0x001944         0x67 build/default/debug/mcc_generated_files/delay.o
+ .debug_abbrev    0x0019ab         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
+ .debug_abbrev    0x0019bf         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
+ .debug_abbrev    0x0019d3         0x14 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
 
-.debug_line       0x000000       0x1a44
+.debug_line       0x000000       0x1c3f
  *(.debug_line)
  .debug_line      0x000000         0x99 build/default/debug/mcc_generated_files/drivers/uart.o
  .debug_line      0x000099        0x149 build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
@@ -1067,26 +1103,28 @@ __CONFIG1
  .debug_line      0x000250        0x183 build/default/debug/mcc_generated_files/drivers/i2c_master.o
  .debug_line      0x0003d3         0xeb build/default/debug/mcc_generated_files/examples/uart_example.o
  .debug_line      0x0004be        0x120 build/default/debug/mcc_generated_files/clock.o
- .debug_line      0x0005de        0x125 build/default/debug/mcc_generated_files/system.o
- .debug_line      0x000703        0x137 build/default/debug/mcc_generated_files/pin_manager.o
- .debug_line      0x00083a         0x1a build/default/debug/mcc_generated_files/mcc.o
- .debug_line      0x000854        0x130 build/default/debug/mcc_generated_files/interrupt_manager.o
- .debug_line      0x000984        0x14c build/default/debug/mcc_generated_files/traps.o
- .debug_line      0x000ad0         0x55 build/default/debug/mcc_generated_files/where_was_i.o
- .debug_line      0x000b25        0x163 build/default/debug/mcc_generated_files/tmr1.o
- .debug_line      0x000c88        0x207 build/default/debug/mcc_generated_files/uart1.o
- .debug_line      0x000e8f        0x1bf build/default/debug/mcc_generated_files/i2c1_driver.o
- .debug_line      0x00104e        0x163 build/default/debug/mcc_generated_files/tmr3.o
- .debug_line      0x0011b1        0x145 build/default/debug/mcc_generated_files/oc4.o
- .debug_line      0x0012f6        0x145 build/default/debug/mcc_generated_files/oc1.o
- .debug_line      0x00143b        0x163 build/default/debug/mcc_generated_files/tmr2.o
- .debug_line      0x00159e        0x207 build/default/debug/mcc_generated_files/uart2.o
- .debug_line      0x0017a5        0x1c2 build/default/debug/main.o
- .debug_line      0x001967         0x59 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
- .debug_line      0x0019c0         0x4a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
- .debug_line      0x001a0a         0x3a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
+ .debug_line      0x0005de        0x126 build/default/debug/mcc_generated_files/system.o
+ .debug_line      0x000704        0x137 build/default/debug/mcc_generated_files/pin_manager.o
+ .debug_line      0x00083b         0x1a build/default/debug/mcc_generated_files/mcc.o
+ .debug_line      0x000855        0x130 build/default/debug/mcc_generated_files/interrupt_manager.o
+ .debug_line      0x000985        0x14c build/default/debug/mcc_generated_files/traps.o
+ .debug_line      0x000ad1         0x55 build/default/debug/mcc_generated_files/where_was_i.o
+ .debug_line      0x000b26        0x163 build/default/debug/mcc_generated_files/tmr1.o
+ .debug_line      0x000c89        0x207 build/default/debug/mcc_generated_files/uart1.o
+ .debug_line      0x000e90        0x1bf build/default/debug/mcc_generated_files/i2c1_driver.o
+ .debug_line      0x00104f        0x163 build/default/debug/mcc_generated_files/tmr3.o
+ .debug_line      0x0011b2        0x145 build/default/debug/mcc_generated_files/oc4.o
+ .debug_line      0x0012f7        0x145 build/default/debug/mcc_generated_files/oc1.o
+ .debug_line      0x00143c        0x163 build/default/debug/mcc_generated_files/tmr2.o
+ .debug_line      0x00159f        0x207 build/default/debug/mcc_generated_files/uart2.o
+ .debug_line      0x0017a6        0x1d2 build/default/debug/main.o
+ .debug_line      0x001978        0x144 build/default/debug/mcc_generated_files/tmr4.o
+ .debug_line      0x001abc         0xa6 build/default/debug/mcc_generated_files/delay.o
+ .debug_line      0x001b62         0x59 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
+ .debug_line      0x001bbb         0x4a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
+ .debug_line      0x001c05         0x3a c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
 
-.debug_frame      0x000000       0x197e
+.debug_frame      0x000000       0x1af8
  *(.debug_frame)
  .debug_frame     0x000000        0x14c build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
  .debug_frame     0x00014c         0x7c build/default/debug/mcc_generated_files/drivers/i2c_types.o
@@ -1106,8 +1144,10 @@ __CONFIG1
  .debug_frame     0x0013d2        0x18a build/default/debug/mcc_generated_files/tmr2.o
  .debug_frame     0x00155c        0x30a build/default/debug/mcc_generated_files/uart2.o
  .debug_frame     0x001866        0x118 build/default/debug/main.o
+ .debug_frame     0x00197e        0x132 build/default/debug/mcc_generated_files/tmr4.o
+ .debug_frame     0x001ab0         0x48 build/default/debug/mcc_generated_files/delay.o
 
-.debug_str        0x000000        0x3ba
+.debug_str        0x000000        0x3cd
  *(.debug_str)
  .debug_str       0x000000          0xd build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
  .debug_str       0x00000d         0x21 build/default/debug/mcc_generated_files/drivers/i2c_master.o
@@ -1123,6 +1163,7 @@ __CONFIG1
  .debug_str       0x000253         0x32 build/default/debug/mcc_generated_files/tmr2.o
  .debug_str       0x000285         0xac build/default/debug/mcc_generated_files/uart2.o
  .debug_str       0x000331         0x89 build/default/debug/main.o
+ .debug_str       0x0003ba         0x13 build/default/debug/mcc_generated_files/tmr4.o
 
 .debug_loc
  *(.debug_loc)
@@ -1131,7 +1172,7 @@ __CONFIG1
  *(.debug_macinfo)
 
 .debug_pubnames
-                  0x000000       0x13f1
+                  0x000000       0x1554
  *(.debug_pubnames)
  .debug_pubnames
                   0x000000         0x1b build/default/debug/mcc_generated_files/drivers/uart.o
@@ -1170,12 +1211,16 @@ __CONFIG1
  .debug_pubnames
                   0x00101c        0x284 build/default/debug/mcc_generated_files/uart2.o
  .debug_pubnames
-                  0x0012a0        0x151 build/default/debug/main.o
+                  0x0012a0        0x15a build/default/debug/main.o
+ .debug_pubnames
+                  0x0013fa        0x11a build/default/debug/mcc_generated_files/tmr4.o
+ .debug_pubnames
+                  0x001514         0x40 build/default/debug/mcc_generated_files/delay.o
 
 .debug_ranges
  *(.debug_ranges)
 
-.debug_aranges    0x000000        0x230
+.debug_aranges    0x000000        0x260
  *(.debug_aranges)
  .debug_aranges
                   0x000000         0x18 build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
@@ -1216,11 +1261,15 @@ __CONFIG1
  .debug_aranges
                   0x0001b8         0x18 build/default/debug/main.o
  .debug_aranges
-                  0x0001d0         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
+                  0x0001d0         0x18 build/default/debug/mcc_generated_files/tmr4.o
  .debug_aranges
-                  0x0001f0         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
+                  0x0001e8         0x18 build/default/debug/mcc_generated_files/delay.o
  .debug_aranges
-                  0x000210         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
+                  0x000200         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
+ .debug_aranges
+                  0x000220         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
+ .debug_aranges
+                  0x000240         0x20 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
                     0x0000                  WREG0 = 0x0
                     0x0000                  _WREG0 = 0x0
                     0x0002                  WREG1 = 0x2
@@ -1804,233 +1853,243 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x000230        0x9c8
+                  0x000260        0xa6e
  .debug_pubtypes
-                  0x000230         0x33 build/default/debug/mcc_generated_files/drivers/uart.o
+                  0x000260         0x33 build/default/debug/mcc_generated_files/drivers/uart.o
  .debug_pubtypes
-                  0x000263         0x77 build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
+                  0x000293         0x77 build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
  .debug_pubtypes
-                  0x0002da         0x27 build/default/debug/mcc_generated_files/drivers/i2c_types.o
+                  0x00030a         0x27 build/default/debug/mcc_generated_files/drivers/i2c_types.o
  .debug_pubtypes
-                  0x000301         0xd3 build/default/debug/mcc_generated_files/drivers/i2c_master.o
+                  0x000331         0xd3 build/default/debug/mcc_generated_files/drivers/i2c_master.o
  .debug_pubtypes
-                  0x0003d4         0x33 build/default/debug/mcc_generated_files/examples/uart_example.o
+                  0x000404         0x33 build/default/debug/mcc_generated_files/examples/uart_example.o
  .debug_pubtypes
-                  0x000407         0x2b build/default/debug/mcc_generated_files/clock.o
+                  0x000437         0x2b build/default/debug/mcc_generated_files/clock.o
  .debug_pubtypes
-                  0x000432         0x42 build/default/debug/mcc_generated_files/system.o
+                  0x000462         0x42 build/default/debug/mcc_generated_files/system.o
  .debug_pubtypes
-                  0x000474         0x1f build/default/debug/mcc_generated_files/pin_manager.o
+                  0x0004a4         0x1f build/default/debug/mcc_generated_files/pin_manager.o
  .debug_pubtypes
-                  0x000493         0xec build/default/debug/mcc_generated_files/interrupt_manager.o
+                  0x0004c3         0xec build/default/debug/mcc_generated_files/interrupt_manager.o
  .debug_pubtypes
-                  0x00057f         0x4e build/default/debug/mcc_generated_files/traps.o
+                  0x0005af         0x4e build/default/debug/mcc_generated_files/traps.o
  .debug_pubtypes
-                  0x0005cd         0xa4 build/default/debug/mcc_generated_files/tmr1.o
+                  0x0005fd         0xa4 build/default/debug/mcc_generated_files/tmr1.o
  .debug_pubtypes
-                  0x000671         0xdc build/default/debug/mcc_generated_files/uart1.o
+                  0x0006a1         0xdc build/default/debug/mcc_generated_files/uart1.o
  .debug_pubtypes
-                  0x00074d         0xe5 build/default/debug/mcc_generated_files/i2c1_driver.o
+                  0x00077d         0xe5 build/default/debug/mcc_generated_files/i2c1_driver.o
  .debug_pubtypes
-                  0x000832         0xa4 build/default/debug/mcc_generated_files/tmr3.o
+                  0x000862         0xa4 build/default/debug/mcc_generated_files/tmr3.o
  .debug_pubtypes
-                  0x0008d6         0x6c build/default/debug/mcc_generated_files/oc4.o
+                  0x000906         0x6c build/default/debug/mcc_generated_files/oc4.o
  .debug_pubtypes
-                  0x000942         0x6c build/default/debug/mcc_generated_files/oc1.o
+                  0x000972         0x6c build/default/debug/mcc_generated_files/oc1.o
  .debug_pubtypes
-                  0x0009ae         0xa4 build/default/debug/mcc_generated_files/tmr2.o
+                  0x0009de         0xa4 build/default/debug/mcc_generated_files/tmr2.o
  .debug_pubtypes
-                  0x000a52         0xdc build/default/debug/mcc_generated_files/uart2.o
+                  0x000a82         0xdc build/default/debug/mcc_generated_files/uart2.o
  .debug_pubtypes
-                  0x000b2e         0xca build/default/debug/main.o
+                  0x000b5e         0xca build/default/debug/main.o
+ .debug_pubtypes
+                  0x000c28         0x87 build/default/debug/mcc_generated_files/tmr4.o
+ .debug_pubtypes
+                  0x000caf         0x1f build/default/debug/mcc_generated_files/delay.o
 
 __c30_signature
-                  0x000bf8        0x138
+                  0x000cce        0x144
  __c30_signature
-                  0x000bf8          0x6 build/default/debug/mcc_generated_files/drivers/uart.o
+                  0x000cce          0x6 build/default/debug/mcc_generated_files/drivers/uart.o
  __c30_signature
-                  0x000bfe          0x6 build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
+                  0x000cd4          0x6 build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
  __c30_signature
-                  0x000c04          0x6 build/default/debug/mcc_generated_files/drivers/i2c_types.o
+                  0x000cda          0x6 build/default/debug/mcc_generated_files/drivers/i2c_types.o
  __c30_signature
-                  0x000c0a          0x6 build/default/debug/mcc_generated_files/drivers/i2c_master.o
+                  0x000ce0          0x6 build/default/debug/mcc_generated_files/drivers/i2c_master.o
  __c30_signature
-                  0x000c10          0x6 build/default/debug/mcc_generated_files/examples/uart_example.o
+                  0x000ce6          0x6 build/default/debug/mcc_generated_files/examples/uart_example.o
  __c30_signature
-                  0x000c16          0x6 build/default/debug/mcc_generated_files/clock.o
+                  0x000cec          0x6 build/default/debug/mcc_generated_files/clock.o
  __c30_signature
-                  0x000c1c          0x6 build/default/debug/mcc_generated_files/system.o
+                  0x000cf2          0x6 build/default/debug/mcc_generated_files/system.o
  __c30_signature
-                  0x000c22          0x6 build/default/debug/mcc_generated_files/pin_manager.o
+                  0x000cf8          0x6 build/default/debug/mcc_generated_files/pin_manager.o
  __c30_signature
-                  0x000c28          0x6 build/default/debug/mcc_generated_files/mcc.o
+                  0x000cfe          0x6 build/default/debug/mcc_generated_files/mcc.o
  __c30_signature
-                  0x000c2e          0x6 build/default/debug/mcc_generated_files/interrupt_manager.o
+                  0x000d04          0x6 build/default/debug/mcc_generated_files/interrupt_manager.o
  __c30_signature
-                  0x000c34          0x6 build/default/debug/mcc_generated_files/traps.o
+                  0x000d0a          0x6 build/default/debug/mcc_generated_files/traps.o
  __c30_signature
-                  0x000c3a          0x6 build/default/debug/mcc_generated_files/tmr1.o
+                  0x000d10          0x6 build/default/debug/mcc_generated_files/tmr1.o
  __c30_signature
-                  0x000c40          0x6 build/default/debug/mcc_generated_files/uart1.o
+                  0x000d16          0x6 build/default/debug/mcc_generated_files/uart1.o
  __c30_signature
-                  0x000c46          0x6 build/default/debug/mcc_generated_files/i2c1_driver.o
+                  0x000d1c          0x6 build/default/debug/mcc_generated_files/i2c1_driver.o
  __c30_signature
-                  0x000c4c          0x6 build/default/debug/mcc_generated_files/tmr3.o
+                  0x000d22          0x6 build/default/debug/mcc_generated_files/tmr3.o
  __c30_signature
-                  0x000c52          0x6 build/default/debug/mcc_generated_files/oc4.o
+                  0x000d28          0x6 build/default/debug/mcc_generated_files/oc4.o
  __c30_signature
-                  0x000c58          0x6 build/default/debug/mcc_generated_files/oc1.o
+                  0x000d2e          0x6 build/default/debug/mcc_generated_files/oc1.o
  __c30_signature
-                  0x000c5e          0x6 build/default/debug/mcc_generated_files/tmr2.o
+                  0x000d34          0x6 build/default/debug/mcc_generated_files/tmr2.o
  __c30_signature
-                  0x000c64          0x6 build/default/debug/mcc_generated_files/uart2.o
+                  0x000d3a          0x6 build/default/debug/mcc_generated_files/uart2.o
  __c30_signature
-                  0x000c6a          0x6 build/default/debug/main.o
+                  0x000d40          0x6 build/default/debug/main.o
  __c30_signature
-                  0x000c70          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt0_standard.o)
+                  0x000d46          0x6 build/default/debug/mcc_generated_files/tmr4.o
  __c30_signature
-                  0x000c76          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(data_init_standard.o)
+                  0x000d4c          0x6 build/default/debug/mcc_generated_files/delay.o
  __c30_signature
-                  0x000c7c          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32.Meo)
+                  0x000d52          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt0_standard.o)
  __c30_signature
-                  0x000c82          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__sio_printf_0.XX_o)
+                  0x000d58          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(data_init_standard.o)
  __c30_signature
-                  0x000c88          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(memset.XX_o)
+                  0x000d5e          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32.Meo)
  __c30_signature
-                  0x000c8e          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(putchar.XX_o)
+                  0x000d64          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__sio_printf_0.XX_o)
  __c30_signature
-                  0x000c94          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(stdout.XX_o)
+                  0x000d6a          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(memset.XX_o)
  __c30_signature
-                  0x000c9a          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__fmt_s.XX_o)
+                  0x000d70          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(putchar.XX_o)
  __c30_signature
-                  0x000ca0          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__int_vfprintf.XX_o)
+                  0x000d76          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(stdout.XX_o)
  __c30_signature
-                  0x000ca6          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__io_init_needed.XX_o)
+                  0x000d7c          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__fmt_s.XX_o)
  __c30_signature
-                  0x000cac          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__out.XX_o)
+                  0x000d82          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__int_vfprintf.XX_o)
  __c30_signature
-                  0x000cb2          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__printf_core.XX_o)
+                  0x000d88          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__io_init_needed.XX_o)
  __c30_signature
-                  0x000cb8          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__stdio_close.XX_o)
+                  0x000d8e          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__out.XX_o)
  __c30_signature
-                  0x000cbe          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(atoi.XX_o)
+                  0x000d94          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__printf_core.XX_o)
  __c30_signature
-                  0x000cc4          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(lseek.XX_o)
+                  0x000d9a          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__stdio_close.XX_o)
  __c30_signature
-                  0x000cca          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(memcpy.XX_o)
+                  0x000da0          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(atoi.XX_o)
  __c30_signature
-                  0x000cd0          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(putc.XX_o)
+                  0x000da6          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(lseek.XX_o)
  __c30_signature
-                  0x000cd6          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(strlen.XX_o)
+                  0x000dac          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(memcpy.XX_o)
  __c30_signature
-                  0x000cdc          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(syscall_ret.XX_o)
+                  0x000db2          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(putc.XX_o)
  __c30_signature
-                  0x000ce2          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(tolower.XX_o)
+                  0x000db8          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(strlen.XX_o)
  __c30_signature
-                  0x000ce8          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__errno_location.XX_o)
+                  0x000dbe          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(syscall_ret.XX_o)
  __c30_signature
-                  0x000cee          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__init_stdio.XX_o)
+                  0x000dc4          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(tolower.XX_o)
  __c30_signature
-                  0x000cf4          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__io_file_needed.XX_o)
+                  0x000dca          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__errno_location.XX_o)
  __c30_signature
-                  0x000cfa          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__pop_float.XX_o)
+                  0x000dd0          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__init_stdio.XX_o)
  __c30_signature
-                  0x000d00          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__pop_int.XX_o)
+                  0x000dd6          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__io_file_needed.XX_o)
  __c30_signature
-                  0x000d06          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__pop_ptr.XX_o)
+                  0x000ddc          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__pop_float.XX_o)
  __c30_signature
-                  0x000d0c          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(close.Meo)
+                  0x000de2          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__pop_int.XX_o)
  __c30_signature
-                  0x000d12          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(write.Meo)
+                  0x000de8          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__pop_ptr.XX_o)
  __c30_signature
-                  0x000d18          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(c30_uart.Meo)
+                  0x000dee          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(close.Meo)
  __c30_signature
-                  0x000d1e          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
+                  0x000df4          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(write.Meo)
  __c30_signature
-                  0x000d24          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
+                  0x000dfa          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(c30_uart.Meo)
  __c30_signature
-                  0x000d2a          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
+                  0x000e00          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
+ __c30_signature
+                  0x000e06          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
+ __c30_signature
+                  0x000e0c          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
 
 __xc_reference_data
 
-.nbss               0x0850         0x2e
+.nbss               0x0850         0x30
  .nbss              0x0850          0xe build/default/debug/mcc_generated_files/uart1.o
                     0x085a                  _UART1_TxDefaultInterruptHandler
                     0x085c                  _UART1_RxDefaultInterruptHandler
  .nbss              0x085e          0xe build/default/debug/mcc_generated_files/uart2.o
                     0x0868                  _UART2_TxDefaultInterruptHandler
                     0x086a                  _UART2_RxDefaultInterruptHandler
- .nbss              0x086c          0xc build/default/debug/main.o
-                    0x086c                  _numOfWStepsLeft
-                    0x086e                  _numOfLStepsLeft
-                    0x0870                  _armStatus
-                    0x0872                  _armFlag
-                    0x0874                  _disarmFlag
-                    0x0876                  _state
- .nbss              0x0878          0x6 build/default/debug/mcc_generated_files/i2c1_driver.o
-                    0x0878                  _i2c1_driver_busCollisionISR
-                    0x087a                  _i2c1_driver_Masteri2cISR
-                    0x087c                  _i2c1_driver_Slavei2cISR
+ .nbss              0x086c          0xe build/default/debug/main.o
+                    0x086c                  _test
+                    0x086e                  _numOfWStepsLeft
+                    0x0870                  _numOfLStepsLeft
+                    0x0872                  _armStatus
+                    0x0874                  _armFlag
+                    0x0876                  _disarmFlag
+                    0x0878                  _state
+ .nbss              0x087a          0x6 build/default/debug/mcc_generated_files/i2c1_driver.o
+                    0x087a                  _i2c1_driver_busCollisionISR
+                    0x087c                  _i2c1_driver_Masteri2cISR
+                    0x087e                  _i2c1_driver_Slavei2cISR
 
-.ndata              0x087e          0x6
- .ndata             0x087e          0x6 build/default/debug/main.o
-                    0x087e                  _timer3Period
-                    0x0880                  _timer2Period
-                    0x0882                  _passCorrect
+.ndata              0x0880          0x6
+ .ndata             0x0880          0x6 build/default/debug/main.o
+                    0x0880                  _timer3Period
+                    0x0882                  _timer2Period
+                    0x0884                  _passCorrect
 
 mcc_generated_files/where_was_i.s.scn1
-                    0x0884          0x4
+                    0x0886          0x4
  mcc_generated_files/where_was_i.s.scn1
-                    0x0884          0x4 build/default/debug/mcc_generated_files/where_was_i.o
-                    0x0884                  _trapSrcAddr
+                    0x0886          0x4 build/default/debug/mcc_generated_files/where_was_i.o
+                    0x0886                  _trapSrcAddr
 
-.ndata              0x0888          0x4
- .ndata             0x0888          0x2 build/default/debug/mcc_generated_files/examples/uart_example.o
-                    0x0888                  _string
- .ndata             0x088a          0x2 build/default/debug/mcc_generated_files/traps.o
+.ndata              0x088a          0x4
+ .ndata             0x088a          0x2 build/default/debug/mcc_generated_files/examples/uart_example.o
+                    0x088a                  _string
+ .ndata             0x088c          0x2 build/default/debug/mcc_generated_files/traps.o
 
-.nbss               0x088c          0xa
- .nbss              0x088c          0x2 build/default/debug/mcc_generated_files/tmr1.o
-                    0x088c                  _TMR1_InterruptHandler
- .nbss              0x088e          0x2 build/default/debug/mcc_generated_files/tmr3.o
-                    0x088e                  _TMR3_InterruptHandler
- .nbss              0x0890          0x2 build/default/debug/mcc_generated_files/oc4.o
- .nbss              0x0892          0x2 build/default/debug/mcc_generated_files/oc1.o
- .nbss              0x0894          0x2 build/default/debug/mcc_generated_files/tmr2.o
-                    0x0894                  _TMR2_InterruptHandler
+.nbss               0x088e          0xa
+ .nbss              0x088e          0x2 build/default/debug/mcc_generated_files/tmr1.o
+                    0x088e                  _TMR1_InterruptHandler
+ .nbss              0x0890          0x2 build/default/debug/mcc_generated_files/tmr3.o
+                    0x0890                  _TMR3_InterruptHandler
+ .nbss              0x0892          0x2 build/default/debug/mcc_generated_files/oc4.o
+ .nbss              0x0894          0x2 build/default/debug/mcc_generated_files/oc1.o
+ .nbss              0x0896          0x2 build/default/debug/mcc_generated_files/tmr2.o
+                    0x0896                  _TMR2_InterruptHandler
 
-.data               0x0896         0x42
- .data              0x0896         0x42 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(stdout.XX_o)
-                    0x0896                  __stdout
-                    0x0898                  ___stdout_used
+.data               0x0898         0x42
+ .data              0x0898         0x42 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(stdout.XX_o)
+                    0x0898                  __stdout
+                    0x089a                  ___stdout_used
 
-.bss                0x08d8         0x26
- .bss               0x08d8         0x26 build/default/debug/mcc_generated_files/drivers/i2c_master.o
-                    0x08d8                  _i2c_status
+.bss                0x08da         0x26
+ .bss               0x08da         0x26 build/default/debug/mcc_generated_files/drivers/i2c_master.o
+                    0x08da                  _i2c_status
 
-.data               0x08fe         0x20
- .data              0x08fe         0x20 build/default/debug/mcc_generated_files/drivers/i2c_master.o
-                    0x08fe                  _fsmStateTable
+.data               0x0900         0x20
+ .data              0x0900         0x20 build/default/debug/mcc_generated_files/drivers/i2c_master.o
+                    0x0900                  _fsmStateTable
 
-.bss                0x091e         0x20
- .bss               0x091e         0x20 build/default/debug/mcc_generated_files/traps.o
+.bss                0x0920         0x20
+ .bss               0x0920         0x20 build/default/debug/mcc_generated_files/traps.o
 
-.data               0x093e         0x1e
- .data              0x093e         0x1e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__printf_core.XX_o)
+.data               0x0940         0x1e
+ .data              0x0940         0x1e c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__printf_core.XX_o)
 
-.bss                0x095c         0x3c
- .bss               0x095c         0x12 build/default/debug/mcc_generated_files/uart1.o
- .bss               0x096e         0x12 build/default/debug/mcc_generated_files/uart2.o
- .bss               0x0980         0x10 build/default/debug/mcc_generated_files/examples/uart_example.o
- .bss               0x0990          0x2 build/default/debug/mcc_generated_files/tmr1.o
- .bss               0x0992          0x2 build/default/debug/mcc_generated_files/tmr3.o
- .bss               0x0994          0x2 build/default/debug/mcc_generated_files/tmr2.o
- .bss               0x0996          0x2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__errno_location.XX_o)
-                    0x0996                  ___errno_val
+.bss                0x095e         0x3e
+ .bss               0x095e         0x12 build/default/debug/mcc_generated_files/uart1.o
+ .bss               0x0970         0x12 build/default/debug/mcc_generated_files/uart2.o
+ .bss               0x0982         0x10 build/default/debug/mcc_generated_files/examples/uart_example.o
+ .bss               0x0992          0x2 build/default/debug/mcc_generated_files/tmr1.o
+ .bss               0x0994          0x2 build/default/debug/mcc_generated_files/tmr3.o
+ .bss               0x0996          0x2 build/default/debug/mcc_generated_files/tmr2.o
+ .bss               0x0998          0x2 build/default/debug/mcc_generated_files/tmr4.o
+ .bss               0x099a          0x2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__errno_location.XX_o)
+                    0x099a                  ___errno_val
 
-.data               0x0998          0x2
- .data              0x0998          0x2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(c30_uart.Meo)
-                    0x0998                  ___C30_UART
+.data               0x099c          0x2
+ .data              0x099c          0x2 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(c30_uart.Meo)
+                    0x099c                  ___C30_UART
 
 .config_JTAGEN    0x0157fe          0x2
  .config_JTAGEN
@@ -2114,231 +2173,247 @@ mcc_generated_files/where_was_i.s.scn1
  .ivt._U2ErrInterrupt
                   0x000098          0x2 build/default/debug/mcc_generated_files/uart2.o
 
-.const              0x900c         0x6a load address 0x00100c  
+.const              0x900c         0x6e load address 0x00100c  
  .const             0x900c         0x5a build/default/debug/mcc_generated_files/examples/uart_example.o
  .const             0x9066         0x10 build/default/debug/mcc_generated_files/drivers/uart.o
                     0x9066                  _uart
+ .const             0x9076          0x4 build/default/debug/main.o
 
-.text             0x001076       0x112a
- .text            0x001076        0x3b4 build/default/debug/mcc_generated_files/drivers/i2c_master.o
-                  0x001076                  _i2c_setDataCompleteCallback
-                  0x001088                  _i2c_setWriteCollisionCallback
-                  0x00109a                  _i2c_setAddressNACKCallback
-                  0x0010ac                  _i2c_setDataNACKCallback
-                  0x0010be                  _i2c_setTimeOutCallback
-                  0x0010d0                  _i2c_open
-                  0x00114a                  _i2c_setAddress
-                  0x001156                  _i2c_close
-                  0x00117e                  _i2c_setTimeOut
-                  0x00118e                  _i2c_setBuffer
-                  0x0011ae                  _i2c_masterOperation
-                  0x0011ea                  _i2c_masterRead
-                  0x0011f4                  _i2c_masterWrite
-                  0x0011fe                  _i2c_poller
-                  0x001214                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_RESET
-                  0x001228                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_IDLE
-                  0x00123a                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_RESTART_READ
-                  0x001244                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_RESTART_WRITE
-                  0x00124e                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_RESTART
-                  0x001258                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_STOP
-                  0x001262                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_ADR_READ
-                  0x00127e                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_ADR_WRITE
-                  0x001294                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_RCEN
-                  0x0012a4                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_ACK
-                  0x0012ae                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_NACK_STOP
-                  0x0012b8                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_NACK_RESTART
-                  0x0012c2                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_ADDRESS_NACK
-                  0x0012e4                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_TX
-                  0x001330                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_RX
-                  0x00136e                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_TX_EMPTY
-                  0x00139a                  _i2c_ISR
-                  0x0013c2                  _i2c_busCollisionISR
-                  0x0013ca                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_returnStop
-                  0x0013d4                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_returnReset
- .text            0x00142a        0x368 build/default/debug/main.o
-                  0x00142a                  _main
-                  0x0014aa                  _TMR1_CallBack
-                  0x0016b2                  _UART1_Receive_CallBack
-                  0x0016da                  _UART2_Receive_CallBack
-                  0x001702                  _TMR3_CallBack
-                  0x001718                  _TMR2_CallBack
-                  0x00172e                  _stepWMotor
-                  0x001752                  _stepLMotor
-                  0x001776                  _armSystem
-                  0x001784                  _disarmSystem
- .text            0x001792        0x30e build/default/debug/mcc_generated_files/uart1.o
-                  0x001792                  _UART1_Initialize
-                  0x0017c6                  _UART1_SetTxInterruptHandler
-                  0x0017de                  _UART1_Transmit_CallBack
-                  0x0017e4                  _UART1_SetRxInterruptHandler
-                  0x001802                  _UART1_Read
-                  0x00182e                  _UART1_Write
-                  0x001858                  _UART1_IsRxReady
-                  0x00186e                  _UART1_IsTxReady
-                  0x0018a2                  _UART1_IsTxDone
-                  0x001930                  _UART1_ReadBuffer
-                  0x00196a                  _UART1_WriteBuffer
-                  0x0019a4                  _UART1_TransferStatusGet
-                  0x0019e8                  _UART1_Peek
-                  0x001a08                  _UART1_ReceiveBufferIsEmpty
-                  0x001a18                  _UART1_TransmitBufferIsFull
-                  0x001a28                  _UART1_StatusGet
-                  0x001a30                  _UART1_TransmitBufferSizeGet
-                  0x001a5e                  _UART1_ReceiveBufferSizeGet
-                  0x001a8c                  _UART1_Enable
-                  0x001a96                  _UART1_Disable
- .text            0x001aa0        0x30e build/default/debug/mcc_generated_files/uart2.o
-                  0x001aa0                  _UART2_Initialize
-                  0x001ad4                  _UART2_SetTxInterruptHandler
-                  0x001aec                  _UART2_Transmit_CallBack
-                  0x001af2                  _UART2_SetRxInterruptHandler
-                  0x001b10                  _UART2_Read
-                  0x001b3c                  _UART2_Write
-                  0x001b66                  _UART2_IsRxReady
-                  0x001b7c                  _UART2_IsTxReady
-                  0x001bb0                  _UART2_IsTxDone
-                  0x001c3e                  _UART2_ReadBuffer
-                  0x001c78                  _UART2_WriteBuffer
-                  0x001cb2                  _UART2_TransferStatusGet
-                  0x001cf6                  _UART2_Peek
-                  0x001d16                  _UART2_ReceiveBufferIsEmpty
-                  0x001d26                  _UART2_TransmitBufferIsFull
-                  0x001d36                  _UART2_StatusGet
-                  0x001d3e                  _UART2_TransmitBufferSizeGet
-                  0x001d6c                  _UART2_ReceiveBufferSizeGet
-                  0x001d9a                  _UART2_Enable
-                  0x001da4                  _UART2_Disable
- .text            0x001dae        0x200 build/default/debug/mcc_generated_files/i2c1_driver.o
-                  0x001dae                  _i2c1_driver_close
-                  0x001db6                  _i2c1_enableIRQ
-                  0x001dc0                  _i2c1_IRQisEnabled
-                  0x001dde                  _i2c1_disableIRQ
-                  0x001de8                  _i2c1_clearIRQ
-                  0x001df2                  _i2c1_setIRQ
-                  0x001dfc                  _i2c1_waitForEvent
-                  0x001e2c                  _i2c1_driver_driver_open
-                  0x001e4c                  _i2c1_driver_initSlaveHardware
-                  0x001e66                  _i2c1_driver_resetBus
-                  0x001e6c                  _i2c1_driver_start
-                  0x001e74                  _i2c1_driver_restart
-                  0x001e7c                  _i2c1_driver_stop
-                  0x001e84                  _i2c1_driver_isNACK
-                  0x001e9c                  _i2c1_driver_startRX
-                  0x001ea4                  _i2c1_driver_getRXData
-                  0x001eae                  _i2c1_driver_TXData
-                  0x001eba                  _i2c1_driver_sendACK
-                  0x001ec4                  _i2c1_driver_sendNACK
-                  0x001ece                  _i2c1_driver_releaseClock
-                  0x001ed6                  _i2c1_driver_isBuferFull
-                  0x001ef4                  _i2c1_driver_isStart
-                  0x001f0c                  _i2c1_driver_isAddress
-                  0x001f22                  _i2c1_driver_isStop
-                  0x001f3a                  _i2c1_driver_isData
-                  0x001f52                  _i2c1_driver_isRead
-                  0x001f6a                  _i2c1_driver_clearBusCollision
-                  0x001f72                  _i2c1_driver_enableStartIRQ
-                  0x001f78                  _i2c1_driver_disableStartIRQ
-                  0x001f7e                  _i2c1_driver_enableStopIRQ
-                  0x001f84                  _i2c1_driver_disableStopIRQ
-                  0x001f8a                  _i2c1_driver_setBusCollisionISR
-                  0x001f96                  _i2c1_driver_setMasterI2cISR
-                  0x001fa2                  _i2c1_driver_setSlaveI2cISR
- .text            0x001fae        0x1f2 build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
-                  0x001fae                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_wr1RegCompleteHandler
-                  0x001fc4                  _i2c_write1ByteRegister
-                  0x001ff8                  _i2c_writeNBytes
-                  0x002024                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_rd1RegCompleteHandler
-                  0x00203a                  _i2c_read1ByteRegister
-                  0x00208c                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_rd2RegCompleteHandler
-                  0x0020a2                  _i2c_read2ByteRegister
-                  0x0020da                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_wr2RegCompleteHandler
-                  0x0020f0                  _i2c_write2ByteRegister
-                  0x002124                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_rdBlkRegCompleteHandler
-                  0x00213e                  _i2c_readDataBlock
-                  0x00217a                  _i2c_readNBytes
+.text             0x00107a       0x116e
+ .text            0x00107a        0x3b4 build/default/debug/mcc_generated_files/drivers/i2c_master.o
+                  0x00107a                  _i2c_setDataCompleteCallback
+                  0x00108c                  _i2c_setWriteCollisionCallback
+                  0x00109e                  _i2c_setAddressNACKCallback
+                  0x0010b0                  _i2c_setDataNACKCallback
+                  0x0010c2                  _i2c_setTimeOutCallback
+                  0x0010d4                  _i2c_open
+                  0x00114e                  _i2c_setAddress
+                  0x00115a                  _i2c_close
+                  0x001182                  _i2c_setTimeOut
+                  0x001192                  _i2c_setBuffer
+                  0x0011b2                  _i2c_masterOperation
+                  0x0011ee                  _i2c_masterRead
+                  0x0011f8                  _i2c_masterWrite
+                  0x001202                  _i2c_poller
+                  0x001218                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_RESET
+                  0x00122c                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_IDLE
+                  0x00123e                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_RESTART_READ
+                  0x001248                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_RESTART_WRITE
+                  0x001252                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_RESTART
+                  0x00125c                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_STOP
+                  0x001266                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_ADR_READ
+                  0x001282                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_SEND_ADR_WRITE
+                  0x001298                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_RCEN
+                  0x0012a8                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_ACK
+                  0x0012b2                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_NACK_STOP
+                  0x0012bc                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_NACK_RESTART
+                  0x0012c6                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_DO_ADDRESS_NACK
+                  0x0012e8                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_TX
+                  0x001334                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_RX
+                  0x001372                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_do_I2C_TX_EMPTY
+                  0x00139e                  _i2c_ISR
+                  0x0013c6                  _i2c_busCollisionISR
+                  0x0013ce                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_returnStop
+                  0x0013d8                  build/default/debug/mcc_generated_files/drivers/i2c_master.o:_returnReset
+ .text            0x00142e        0x3ac build/default/debug/main.o
+                  0x00142e                  _main
+                  0x0014f2                  _TMR1_CallBack
+                  0x0016fa                  _UART1_Receive_CallBack
+                  0x001722                  _UART2_Receive_CallBack
+                  0x00174a                  _TMR3_CallBack
+                  0x001760                  _TMR2_CallBack
+                  0x001776                  _stepWMotor
+                  0x00179a                  _stepLMotor
+                  0x0017be                  _armSystem
+                  0x0017cc                  _disarmSystem
+ .text            0x0017da        0x30e build/default/debug/mcc_generated_files/uart1.o
+                  0x0017da                  _UART1_Initialize
+                  0x00180e                  _UART1_SetTxInterruptHandler
+                  0x001826                  _UART1_Transmit_CallBack
+                  0x00182c                  _UART1_SetRxInterruptHandler
+                  0x00184a                  _UART1_Read
+                  0x001876                  _UART1_Write
+                  0x0018a0                  _UART1_IsRxReady
+                  0x0018b6                  _UART1_IsTxReady
+                  0x0018ea                  _UART1_IsTxDone
+                  0x001978                  _UART1_ReadBuffer
+                  0x0019b2                  _UART1_WriteBuffer
+                  0x0019ec                  _UART1_TransferStatusGet
+                  0x001a30                  _UART1_Peek
+                  0x001a50                  _UART1_ReceiveBufferIsEmpty
+                  0x001a60                  _UART1_TransmitBufferIsFull
+                  0x001a70                  _UART1_StatusGet
+                  0x001a78                  _UART1_TransmitBufferSizeGet
+                  0x001aa6                  _UART1_ReceiveBufferSizeGet
+                  0x001ad4                  _UART1_Enable
+                  0x001ade                  _UART1_Disable
+ .text            0x001ae8        0x30e build/default/debug/mcc_generated_files/uart2.o
+                  0x001ae8                  _UART2_Initialize
+                  0x001b1c                  _UART2_SetTxInterruptHandler
+                  0x001b34                  _UART2_Transmit_CallBack
+                  0x001b3a                  _UART2_SetRxInterruptHandler
+                  0x001b58                  _UART2_Read
+                  0x001b84                  _UART2_Write
+                  0x001bae                  _UART2_IsRxReady
+                  0x001bc4                  _UART2_IsTxReady
+                  0x001bf8                  _UART2_IsTxDone
+                  0x001c86                  _UART2_ReadBuffer
+                  0x001cc0                  _UART2_WriteBuffer
+                  0x001cfa                  _UART2_TransferStatusGet
+                  0x001d3e                  _UART2_Peek
+                  0x001d5e                  _UART2_ReceiveBufferIsEmpty
+                  0x001d6e                  _UART2_TransmitBufferIsFull
+                  0x001d7e                  _UART2_StatusGet
+                  0x001d86                  _UART2_TransmitBufferSizeGet
+                  0x001db4                  _UART2_ReceiveBufferSizeGet
+                  0x001de2                  _UART2_Enable
+                  0x001dec                  _UART2_Disable
+ .text            0x001df6        0x200 build/default/debug/mcc_generated_files/i2c1_driver.o
+                  0x001df6                  _i2c1_driver_close
+                  0x001dfe                  _i2c1_enableIRQ
+                  0x001e08                  _i2c1_IRQisEnabled
+                  0x001e26                  _i2c1_disableIRQ
+                  0x001e30                  _i2c1_clearIRQ
+                  0x001e3a                  _i2c1_setIRQ
+                  0x001e44                  _i2c1_waitForEvent
+                  0x001e74                  _i2c1_driver_driver_open
+                  0x001e94                  _i2c1_driver_initSlaveHardware
+                  0x001eae                  _i2c1_driver_resetBus
+                  0x001eb4                  _i2c1_driver_start
+                  0x001ebc                  _i2c1_driver_restart
+                  0x001ec4                  _i2c1_driver_stop
+                  0x001ecc                  _i2c1_driver_isNACK
+                  0x001ee4                  _i2c1_driver_startRX
+                  0x001eec                  _i2c1_driver_getRXData
+                  0x001ef6                  _i2c1_driver_TXData
+                  0x001f02                  _i2c1_driver_sendACK
+                  0x001f0c                  _i2c1_driver_sendNACK
+                  0x001f16                  _i2c1_driver_releaseClock
+                  0x001f1e                  _i2c1_driver_isBuferFull
+                  0x001f3c                  _i2c1_driver_isStart
+                  0x001f54                  _i2c1_driver_isAddress
+                  0x001f6a                  _i2c1_driver_isStop
+                  0x001f82                  _i2c1_driver_isData
+                  0x001f9a                  _i2c1_driver_isRead
+                  0x001fb2                  _i2c1_driver_clearBusCollision
+                  0x001fba                  _i2c1_driver_enableStartIRQ
+                  0x001fc0                  _i2c1_driver_disableStartIRQ
+                  0x001fc6                  _i2c1_driver_enableStopIRQ
+                  0x001fcc                  _i2c1_driver_disableStopIRQ
+                  0x001fd2                  _i2c1_driver_setBusCollisionISR
+                  0x001fde                  _i2c1_driver_setMasterI2cISR
+                  0x001fea                  _i2c1_driver_setSlaveI2cISR
+ .text            0x001ff6        0x1f2 build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
+                  0x001ff6                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_wr1RegCompleteHandler
+                  0x00200c                  _i2c_write1ByteRegister
+                  0x002040                  _i2c_writeNBytes
+                  0x00206c                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_rd1RegCompleteHandler
+                  0x002082                  _i2c_read1ByteRegister
+                  0x0020d4                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_rd2RegCompleteHandler
+                  0x0020ea                  _i2c_read2ByteRegister
+                  0x002122                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_wr2RegCompleteHandler
+                  0x002138                  _i2c_write2ByteRegister
+                  0x00216c                  build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o:_rdBlkRegCompleteHandler
+                  0x002186                  _i2c_readDataBlock
+                  0x0021c2                  _i2c_readNBytes
 
-.dinit            0x0021a0         0xfe
- .dinit           0x0021a0         0xfe data_init
+.dinit            0x0021e8        0x104
+ .dinit           0x0021e8        0x104 data_init
 
-.text             0x00229e        0x510
- .text            0x00229e         0xb8 build/default/debug/mcc_generated_files/tmr1.o
-                  0x00229e                  _TMR1_Initialize
-                  0x0022c2                  _TMR1_Period16BitSet
-                  0x0022d4                  _TMR1_Period16BitGet
-                  0x0022dc                  _TMR1_Counter16BitSet
-                  0x0022ee                  _TMR1_Counter16BitGet
-                  0x0022fc                  _TMR1_SetInterruptHandler
-                  0x00230c                  _TMR1_Start
-                  0x00231c                  _TMR1_Stop
-                  0x002326                  _TMR1_GetElapsedThenClear
-                  0x00233e                  _TMR1_SoftwareCounterGet
-                  0x00234a                  _TMR1_SoftwareCounterClear
- .text            0x002356         0xb8 build/default/debug/mcc_generated_files/tmr3.o
-                  0x002356                  _TMR3_Initialize
-                  0x00237a                  _TMR3_Period16BitSet
-                  0x00238c                  _TMR3_Period16BitGet
-                  0x002394                  _TMR3_Counter16BitSet
-                  0x0023a6                  _TMR3_Counter16BitGet
-                  0x0023b4                  _TMR3_SetInterruptHandler
-                  0x0023c4                  _TMR3_Start
-                  0x0023d4                  _TMR3_Stop
-                  0x0023de                  _TMR3_GetElapsedThenClear
-                  0x0023f6                  _TMR3_SoftwareCounterGet
-                  0x002402                  _TMR3_SoftwareCounterClear
- .text            0x00240e         0xb6 build/default/debug/mcc_generated_files/tmr2.o
-                  0x00240e                  _TMR2_Initialize
-                  0x002430                  _TMR2_Period16BitSet
-                  0x002442                  _TMR2_Period16BitGet
-                  0x00244a                  _TMR2_Counter16BitSet
-                  0x00245c                  _TMR2_Counter16BitGet
-                  0x00246a                  _TMR2_SetInterruptHandler
-                  0x00247a                  _TMR2_Start
-                  0x00248a                  _TMR2_Stop
-                  0x002494                  _TMR2_GetElapsedThenClear
-                  0x0024ac                  _TMR2_SoftwareCounterGet
-                  0x0024b8                  _TMR2_SoftwareCounterClear
- .text            0x0024c4         0xb0 build/default/debug/mcc_generated_files/oc4.o
-                  0x0024c4                  _OC4_Initialize
-                  0x0024dc                  _OC4_CallBack
-                  0x0024e2                  _OC4_Tasks
-                  0x0024f6                  _OC4_Start
-                  0x002510                  _OC4_Stop
-                  0x00251e                  _OC4_SecondaryValueSet
-                  0x00252a                  _OC4_PrimaryValueSet
-                  0x002536                  _OC4_IsCompareCycleComplete
-                  0x00254e                  _OC4_FaultStatusGet
- .text            0x002574         0xae build/default/debug/mcc_generated_files/oc1.o
-                  0x002574                  _OC1_Initialize
-                  0x00258c                  _OC1_CallBack
-                  0x002592                  _OC1_Tasks
-                  0x0025a4                  _OC1_Start
-                  0x0025be                  _OC1_Stop
-                  0x0025cc                  _OC1_SecondaryValueSet
-                  0x0025d8                  _OC1_PrimaryValueSet
-                  0x0025e4                  _OC1_IsCompareCycleComplete
-                  0x0025fc                  _OC1_FaultStatusGet
- .text            0x002622         0x7c build/default/debug/mcc_generated_files/examples/uart_example.o
-                  0x002622                  _UART_example_READ
- .text            0x00269e         0x74 build/default/debug/mcc_generated_files/interrupt_manager.o
-                  0x00269e                  _INTERRUPT_Initialize
- .text            0x002712         0x46 build/default/debug/mcc_generated_files/pin_manager.o
-                  0x002712                  _PIN_MANAGER_Initialize
- .text            0x002758         0x2e build/default/debug/mcc_generated_files/clock.o
-                  0x002758                  _CLOCK_Initialize
- .text            0x002786         0x28 build/default/debug/mcc_generated_files/drivers/i2c_types.o
-                  0x002786                  _i2c_returnStop
-                  0x002790                  _i2c_returnReset
-                  0x00279a                  _i2c_restartWrite
-                  0x0027a4                  _i2c_restartRead
+.text             0x0022ec        0x632
+ .text            0x0022ec         0xb8 build/default/debug/mcc_generated_files/tmr1.o
+                  0x0022ec                  _TMR1_Initialize
+                  0x002310                  _TMR1_Period16BitSet
+                  0x002322                  _TMR1_Period16BitGet
+                  0x00232a                  _TMR1_Counter16BitSet
+                  0x00233c                  _TMR1_Counter16BitGet
+                  0x00234a                  _TMR1_SetInterruptHandler
+                  0x00235a                  _TMR1_Start
+                  0x00236a                  _TMR1_Stop
+                  0x002374                  _TMR1_GetElapsedThenClear
+                  0x00238c                  _TMR1_SoftwareCounterGet
+                  0x002398                  _TMR1_SoftwareCounterClear
+ .text            0x0023a4         0xb8 build/default/debug/mcc_generated_files/tmr3.o
+                  0x0023a4                  _TMR3_Initialize
+                  0x0023c8                  _TMR3_Period16BitSet
+                  0x0023da                  _TMR3_Period16BitGet
+                  0x0023e2                  _TMR3_Counter16BitSet
+                  0x0023f4                  _TMR3_Counter16BitGet
+                  0x002402                  _TMR3_SetInterruptHandler
+                  0x002412                  _TMR3_Start
+                  0x002422                  _TMR3_Stop
+                  0x00242c                  _TMR3_GetElapsedThenClear
+                  0x002444                  _TMR3_SoftwareCounterGet
+                  0x002450                  _TMR3_SoftwareCounterClear
+ .text            0x00245c         0xb6 build/default/debug/mcc_generated_files/tmr2.o
+                  0x00245c                  _TMR2_Initialize
+                  0x00247e                  _TMR2_Period16BitSet
+                  0x002490                  _TMR2_Period16BitGet
+                  0x002498                  _TMR2_Counter16BitSet
+                  0x0024aa                  _TMR2_Counter16BitGet
+                  0x0024b8                  _TMR2_SetInterruptHandler
+                  0x0024c8                  _TMR2_Start
+                  0x0024d8                  _TMR2_Stop
+                  0x0024e2                  _TMR2_GetElapsedThenClear
+                  0x0024fa                  _TMR2_SoftwareCounterGet
+                  0x002506                  _TMR2_SoftwareCounterClear
+ .text            0x002512         0xb0 build/default/debug/mcc_generated_files/oc4.o
+                  0x002512                  _OC4_Initialize
+                  0x00252a                  _OC4_CallBack
+                  0x002530                  _OC4_Tasks
+                  0x002544                  _OC4_Start
+                  0x00255e                  _OC4_Stop
+                  0x00256c                  _OC4_SecondaryValueSet
+                  0x002578                  _OC4_PrimaryValueSet
+                  0x002584                  _OC4_IsCompareCycleComplete
+                  0x00259c                  _OC4_FaultStatusGet
+ .text            0x0025c2         0xb0 build/default/debug/mcc_generated_files/tmr4.o
+                  0x0025c2                  _TMR4_Initialize
+                  0x0025d6                  _TMR4_Tasks_16BitOperation
+                  0x0025f8                  _TMR4_Period16BitSet
+                  0x00260a                  _TMR4_Period16BitGet
+                  0x002612                  _TMR4_Counter16BitSet
+                  0x002624                  _TMR4_Counter16BitGet
+                  0x00262c                  _TMR4_Start
+                  0x00263a                  _TMR4_Stop
+                  0x002642                  _TMR4_GetElapsedThenClear
+                  0x00265a                  _TMR4_SoftwareCounterGet
+                  0x002666                  _TMR4_SoftwareCounterClear
+ .text            0x002672         0xae build/default/debug/mcc_generated_files/oc1.o
+                  0x002672                  _OC1_Initialize
+                  0x00268a                  _OC1_CallBack
+                  0x002690                  _OC1_Tasks
+                  0x0026a2                  _OC1_Start
+                  0x0026bc                  _OC1_Stop
+                  0x0026ca                  _OC1_SecondaryValueSet
+                  0x0026d6                  _OC1_PrimaryValueSet
+                  0x0026e2                  _OC1_IsCompareCycleComplete
+                  0x0026fa                  _OC1_FaultStatusGet
+ .text            0x002720         0x7c build/default/debug/mcc_generated_files/examples/uart_example.o
+                  0x002720                  _UART_example_READ
+ .text            0x00279c         0x74 build/default/debug/mcc_generated_files/interrupt_manager.o
+                  0x00279c                  _INTERRUPT_Initialize
+ .text            0x002810         0x56 build/default/debug/mcc_generated_files/delay.o
+                  0x002810                  _DELAY_milliseconds
+                  0x002832                  _DELAY_microseconds
+ .text            0x002866         0x46 build/default/debug/mcc_generated_files/pin_manager.o
+                  0x002866                  _PIN_MANAGER_Initialize
+ .text            0x0028ac         0x2e build/default/debug/mcc_generated_files/clock.o
+                  0x0028ac                  _CLOCK_Initialize
+ .text            0x0028da         0x28 build/default/debug/mcc_generated_files/drivers/i2c_types.o
+                  0x0028da                  _i2c_returnStop
+                  0x0028e4                  _i2c_returnReset
+                  0x0028ee                  _i2c_restartWrite
+                  0x0028f8                  _i2c_restartRead
+ .text            0x002902         0x1c build/default/debug/mcc_generated_files/system.o
+                  0x002902                  _SYSTEM_Initialize
 
-.init.delay32     0x0027ae         0x1c
- .init.delay32    0x0027ae         0x1c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32.Meo)
-                  0x0027ae                  ___delay32
+.init.delay32     0x00291e         0x1c
+ .init.delay32    0x00291e         0x1c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32.Meo)
+                  0x00291e                  ___delay32
 
-.text             0x0027ca         0x44
- .text            0x0027ca         0x1a build/default/debug/mcc_generated_files/system.o
-                  0x0027ca                  _SYSTEM_Initialize
- .text            0x0027e4         0x1a build/default/debug/mcc_generated_files/traps.o
-                  0x0027e4                  _TRAPS_halt_on_error
- .text            0x0027fe         0x10 build/default/debug/mcc_generated_files/where_was_i.o
-                  0x0027fe                  _where_was_i
+.text             0x00293a         0x2a
+ .text            0x00293a         0x1a build/default/debug/mcc_generated_files/traps.o
+                  0x00293a                  _TRAPS_halt_on_error
+ .text            0x002954         0x10 build/default/debug/mcc_generated_files/where_was_i.o
+                  0x002954                  _where_was_i

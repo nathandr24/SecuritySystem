@@ -5,6 +5,7 @@
 #include "mcc_generated_files/tmr3.h"
 #include "mcc_generated_files/tmr2.h"
 #include "mcc_generated_files/uart2.h"
+#include "mcc_generated_files/delay.h"
 
 #define NUM_OF_WINDOW_STEPS     2000
 #define NUM_OF_LOCK_STEPS       2000
@@ -13,6 +14,8 @@
 #define PASS_NUM_2 9
 #define PASS_NUM_3 9
 #define PASS_NUM_4 8
+
+uint8_t test = 0;
 
 uint16_t timer3Period = 200;  // window motor speed
 uint16_t timer2Period = 200;  // lock motor speed
@@ -56,7 +59,28 @@ int main(void)
 //    i2c_writeNBytes(0x71, &two, 1);
 //    i2c_writeNBytes(0x71, &three, 1);
 //    TXData = 5; i2c_writeNBytes(0x71, &TXData, 1);
-    UART1_Write(0x76);
+    char buffer[4] = {'$', '$', '$', '\r'};
+    
+    UART1_WriteBuffer(buffer, 4);
+    
+    DELAY_milliseconds(2000);
+    Nop();
+    
+    while(UART1_IsRxReady())
+        test = UART1_Read();
+    
+    
+    UART1_Write('C');
+    UART1_Write('0');   
+    UART1_Write(',');
+    UART1_Write('S');
+    UART1_Write('S');
+    UART1_Write('\r');
+    
+    UART1_Write('R');
+    UART1_Write(',');
+    UART1_Write('1');
+    UART1_Write('\r');
 
     
     stepWMotor(1000);
@@ -87,7 +111,7 @@ int main(void)
 
 void TMR1_CallBack(void)
 {
-    UART2_Write('Q');
+    UART1_Write('Q');
     uint16_t input = 46;
     
     // Test column 1
@@ -219,7 +243,7 @@ void UART1_Receive_CallBack(void)
         disarmFlag = 1;
 }
 
-UART2_Receive_CallBack()
+void UART2_Receive_CallBack(void)
 {
     uint8_t a = 0;
     a = UART2_Read();
