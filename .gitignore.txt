@@ -28,7 +28,5 @@ nbactions.xml
 nb-configuration.xml
 funclist
 nbproject/Makefile-*
-.generated_files/
 disassembly/
-
-
+SecuritySystem1.0.X/.generated_files
