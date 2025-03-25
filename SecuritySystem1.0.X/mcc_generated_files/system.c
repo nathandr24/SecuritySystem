@@ -65,26 +65,26 @@
 #include "pin_manager.h"
 #include "clock.h"
 #include "system.h"
-#include "oc1.h"
-#include "delay.h"
-#include "i2c1_driver.h"
-#include "oc4.h"
-#include "drivers/i2c_master.h"
-#include "tmr3.h"
 #include "interrupt_manager.h"
 #include "traps.h"
-#include "tmr2.h"
-#include "tmr4.h"
+#include "oc1.h"
 #include "drivers/i2c_simple_master.h"
-#include "uart2.h"
-#include "tmr1.h"
+#include "delay.h"
 #include "uart1.h"
+#include "uart2.h"
+#include "i2c1_driver.h"
+#include "drivers/i2c_master.h"
+#include "tmr2.h"
+#include "oc4.h"
+#include "tmr1.h"
+#include "tmr4.h"
+#include "tmr3.h"
 
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    CLOCK_Initialize();
     INTERRUPT_Initialize();
+    CLOCK_Initialize();
     UART2_Initialize();
     OC4_Initialize();
     UART1_Initialize();

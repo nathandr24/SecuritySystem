@@ -59,29 +59,8 @@ int main(void)
 //    i2c_writeNBytes(0x71, &two, 1);
 //    i2c_writeNBytes(0x71, &three, 1);
 //    TXData = 5; i2c_writeNBytes(0x71, &TXData, 1);
-    char buffer[4] = {'$', '$', '$', '\r'};
-    
-    UART1_WriteBuffer(buffer, 4);
-    
     DELAY_milliseconds(2000);
     Nop();
-    
-    while(UART1_IsRxReady())
-        test = UART1_Read();
-    
-    
-    UART1_Write('C');
-    UART1_Write('0');   
-    UART1_Write(',');
-    UART1_Write('S');
-    UART1_Write('S');
-    UART1_Write('\r');
-    
-    UART1_Write('R');
-    UART1_Write(',');
-    UART1_Write('1');
-    UART1_Write('\r');
-
     
     stepWMotor(1000);
     stepLMotor(3000);
