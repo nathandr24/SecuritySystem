@@ -4,11 +4,11 @@ Tool Name:
   c:\program files\microchip\xc16\v2.10\bin\bin\..\bin/elf-ld.exe
 
 Command:
-  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp000039c4.00 \
-  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp000039c4.01 \
-  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp000039c4.02 \
-  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp000039c4.03 \
-  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp000039c4.04 \
+  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp00003ee0.00 \
+  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp00003ee0.01 \
+  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp00003ee0.02 \
+  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp00003ee0.03 \
+  -TC:\\Users\\ndr24\\AppData\\Local\\Temp\\tmp00003ee0.04 \
   -p24FJ128GA010 \
   --mdfp=C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC24F-GA-GB_DFP/1.9.336/xc16 \
   -o \
@@ -1037,7 +1037,7 @@ __CONFIG1
 .comment
  *(.comment)
 
-.debug_info       0x000000       0xa1ac
+.debug_info       0x000000       0xa086
  *(.debug_info)
  .debug_info      0x000000        0x2a8 build/default/debug/mcc_generated_files/drivers/uart.o
  .debug_info      0x0002a8        0x630 build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
@@ -1060,10 +1060,10 @@ __CONFIG1
  .debug_info      0x007b1f        0xfe7 build/default/debug/mcc_generated_files/uart2.o
  .debug_info      0x008b06        0x66d build/default/debug/mcc_generated_files/tmr4.o
  .debug_info      0x009173        0x1e7 build/default/debug/mcc_generated_files/delay.o
- .debug_info      0x00935a        0xca9 build/default/debug/main.o
- .debug_info      0x00a003         0x90 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
- .debug_info      0x00a093         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
- .debug_info      0x00a120         0x8c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
+ .debug_info      0x00935a        0xb83 build/default/debug/main.o
+ .debug_info      0x009edd         0x90 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
+ .debug_info      0x009f6d         0x8d c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
+ .debug_info      0x009ffa         0x8c c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
  *(.gnu.linkonce.wi.*)
 
 .debug_abbrev     0x000000       0x19ea
@@ -1147,7 +1147,7 @@ __CONFIG1
  .debug_frame     0x001998         0x48 build/default/debug/mcc_generated_files/delay.o
  .debug_frame     0x0019e0        0x118 build/default/debug/main.o
 
-.debug_str        0x000000        0x3d6
+.debug_str        0x000000        0x3cd
  *(.debug_str)
  .debug_str       0x000000          0xd build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
  .debug_str       0x00000d         0x21 build/default/debug/mcc_generated_files/drivers/i2c_master.o
@@ -1163,7 +1163,7 @@ __CONFIG1
  .debug_str       0x000253         0x32 build/default/debug/mcc_generated_files/tmr2.o
  .debug_str       0x000285         0xac build/default/debug/mcc_generated_files/uart2.o
  .debug_str       0x000331         0x13 build/default/debug/mcc_generated_files/tmr4.o
- .debug_str       0x000344         0x92 build/default/debug/main.o
+ .debug_str       0x000344         0x89 build/default/debug/main.o
 
 .debug_loc
  *(.debug_loc)
@@ -1853,7 +1853,7 @@ LOAD default_isr
 LOAD data_init
 
 .debug_pubtypes
-                  0x000260        0xa8b
+                  0x000260        0xa6e
  .debug_pubtypes
                   0x000260         0x33 build/default/debug/mcc_generated_files/drivers/uart.o
  .debug_pubtypes
@@ -1895,118 +1895,118 @@ LOAD data_init
  .debug_pubtypes
                   0x000be5         0x1f build/default/debug/mcc_generated_files/delay.o
  .debug_pubtypes
-                  0x000c04         0xe7 build/default/debug/main.o
+                  0x000c04         0xca build/default/debug/main.o
 
 __c30_signature
-                  0x000ceb        0x144
+                  0x000cce        0x144
  __c30_signature
-                  0x000ceb          0x6 build/default/debug/mcc_generated_files/drivers/uart.o
+                  0x000cce          0x6 build/default/debug/mcc_generated_files/drivers/uart.o
  __c30_signature
-                  0x000cf1          0x6 build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
+                  0x000cd4          0x6 build/default/debug/mcc_generated_files/drivers/i2c_simple_master.o
  __c30_signature
-                  0x000cf7          0x6 build/default/debug/mcc_generated_files/drivers/i2c_types.o
+                  0x000cda          0x6 build/default/debug/mcc_generated_files/drivers/i2c_types.o
  __c30_signature
-                  0x000cfd          0x6 build/default/debug/mcc_generated_files/drivers/i2c_master.o
+                  0x000ce0          0x6 build/default/debug/mcc_generated_files/drivers/i2c_master.o
  __c30_signature
-                  0x000d03          0x6 build/default/debug/mcc_generated_files/examples/uart_example.o
+                  0x000ce6          0x6 build/default/debug/mcc_generated_files/examples/uart_example.o
  __c30_signature
-                  0x000d09          0x6 build/default/debug/mcc_generated_files/clock.o
+                  0x000cec          0x6 build/default/debug/mcc_generated_files/clock.o
  __c30_signature
-                  0x000d0f          0x6 build/default/debug/mcc_generated_files/system.o
+                  0x000cf2          0x6 build/default/debug/mcc_generated_files/system.o
  __c30_signature
-                  0x000d15          0x6 build/default/debug/mcc_generated_files/pin_manager.o
+                  0x000cf8          0x6 build/default/debug/mcc_generated_files/pin_manager.o
  __c30_signature
-                  0x000d1b          0x6 build/default/debug/mcc_generated_files/mcc.o
+                  0x000cfe          0x6 build/default/debug/mcc_generated_files/mcc.o
  __c30_signature
-                  0x000d21          0x6 build/default/debug/mcc_generated_files/interrupt_manager.o
+                  0x000d04          0x6 build/default/debug/mcc_generated_files/interrupt_manager.o
  __c30_signature
-                  0x000d27          0x6 build/default/debug/mcc_generated_files/traps.o
+                  0x000d0a          0x6 build/default/debug/mcc_generated_files/traps.o
  __c30_signature
-                  0x000d2d          0x6 build/default/debug/mcc_generated_files/tmr1.o
+                  0x000d10          0x6 build/default/debug/mcc_generated_files/tmr1.o
  __c30_signature
-                  0x000d33          0x6 build/default/debug/mcc_generated_files/uart1.o
+                  0x000d16          0x6 build/default/debug/mcc_generated_files/uart1.o
  __c30_signature
-                  0x000d39          0x6 build/default/debug/mcc_generated_files/i2c1_driver.o
+                  0x000d1c          0x6 build/default/debug/mcc_generated_files/i2c1_driver.o
  __c30_signature
-                  0x000d3f          0x6 build/default/debug/mcc_generated_files/tmr3.o
+                  0x000d22          0x6 build/default/debug/mcc_generated_files/tmr3.o
  __c30_signature
-                  0x000d45          0x6 build/default/debug/mcc_generated_files/oc4.o
+                  0x000d28          0x6 build/default/debug/mcc_generated_files/oc4.o
  __c30_signature
-                  0x000d4b          0x6 build/default/debug/mcc_generated_files/oc1.o
+                  0x000d2e          0x6 build/default/debug/mcc_generated_files/oc1.o
  __c30_signature
-                  0x000d51          0x6 build/default/debug/mcc_generated_files/tmr2.o
+                  0x000d34          0x6 build/default/debug/mcc_generated_files/tmr2.o
  __c30_signature
-                  0x000d57          0x6 build/default/debug/mcc_generated_files/uart2.o
+                  0x000d3a          0x6 build/default/debug/mcc_generated_files/uart2.o
  __c30_signature
-                  0x000d5d          0x6 build/default/debug/mcc_generated_files/tmr4.o
+                  0x000d40          0x6 build/default/debug/mcc_generated_files/tmr4.o
  __c30_signature
-                  0x000d63          0x6 build/default/debug/mcc_generated_files/delay.o
+                  0x000d46          0x6 build/default/debug/mcc_generated_files/delay.o
  __c30_signature
-                  0x000d69          0x6 build/default/debug/main.o
+                  0x000d4c          0x6 build/default/debug/main.o
  __c30_signature
-                  0x000d6f          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt0_standard.o)
+                  0x000d52          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(crt0_standard.o)
  __c30_signature
-                  0x000d75          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(data_init_standard.o)
+                  0x000d58          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(data_init_standard.o)
  __c30_signature
-                  0x000d7b          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32.Meo)
+                  0x000d5e          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(delay32.Meo)
  __c30_signature
-                  0x000d81          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__sio_printf_0.XX_o)
+                  0x000d64          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__sio_printf_0.XX_o)
  __c30_signature
-                  0x000d87          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(memset.XX_o)
+                  0x000d6a          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(memset.XX_o)
  __c30_signature
-                  0x000d8d          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(putchar.XX_o)
+                  0x000d70          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(putchar.XX_o)
  __c30_signature
-                  0x000d93          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(stdout.XX_o)
+                  0x000d76          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(stdout.XX_o)
  __c30_signature
-                  0x000d99          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__fmt_s.XX_o)
+                  0x000d7c          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__fmt_s.XX_o)
  __c30_signature
-                  0x000d9f          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__int_vfprintf.XX_o)
+                  0x000d82          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__int_vfprintf.XX_o)
  __c30_signature
-                  0x000da5          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__io_init_needed.XX_o)
+                  0x000d88          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__io_init_needed.XX_o)
  __c30_signature
-                  0x000dab          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__out.XX_o)
+                  0x000d8e          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__out.XX_o)
  __c30_signature
-                  0x000db1          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__printf_core.XX_o)
+                  0x000d94          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__printf_core.XX_o)
  __c30_signature
-                  0x000db7          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__stdio_close.XX_o)
+                  0x000d9a          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__stdio_close.XX_o)
  __c30_signature
-                  0x000dbd          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(atoi.XX_o)
+                  0x000da0          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(atoi.XX_o)
  __c30_signature
-                  0x000dc3          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(lseek.XX_o)
+                  0x000da6          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(lseek.XX_o)
  __c30_signature
-                  0x000dc9          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(memcpy.XX_o)
+                  0x000dac          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(memcpy.XX_o)
  __c30_signature
-                  0x000dcf          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(putc.XX_o)
+                  0x000db2          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(putc.XX_o)
  __c30_signature
-                  0x000dd5          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(strlen.XX_o)
+                  0x000db8          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(strlen.XX_o)
  __c30_signature
-                  0x000ddb          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(syscall_ret.XX_o)
+                  0x000dbe          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(syscall_ret.XX_o)
  __c30_signature
-                  0x000de1          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(tolower.XX_o)
+                  0x000dc4          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(tolower.XX_o)
  __c30_signature
-                  0x000de7          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__errno_location.XX_o)
+                  0x000dca          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__errno_location.XX_o)
  __c30_signature
-                  0x000ded          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__init_stdio.XX_o)
+                  0x000dd0          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__init_stdio.XX_o)
  __c30_signature
-                  0x000df3          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__io_file_needed.XX_o)
+                  0x000dd6          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__io_file_needed.XX_o)
  __c30_signature
-                  0x000df9          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__pop_float.XX_o)
+                  0x000ddc          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__pop_float.XX_o)
  __c30_signature
-                  0x000dff          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__pop_int.XX_o)
+                  0x000de2          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__pop_int.XX_o)
  __c30_signature
-                  0x000e05          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__pop_ptr.XX_o)
+                  0x000de8          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-elf.a(__pop_ptr.XX_o)
  __c30_signature
-                  0x000e0b          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(close.Meo)
+                  0x000dee          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(close.Meo)
  __c30_signature
-                  0x000e11          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(write.Meo)
+                  0x000df4          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(write.Meo)
  __c30_signature
-                  0x000e17          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(c30_uart.Meo)
+                  0x000dfa          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(c30_uart.Meo)
  __c30_signature
-                  0x000e1d          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
+                  0x000e00          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(extendsfdf.XX_o)
  __c30_signature
-                  0x000e23          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
+                  0x000e06          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(funpack.XX_o)
  __c30_signature
-                  0x000e29          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
+                  0x000e0c          0x6 c:/program files/microchip/xc16/v2.10/bin/bin/../../lib\libc99-pic30-elf.a(mulsi3.XX_o)
 
 __xc_reference_data
 

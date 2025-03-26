@@ -17,8 +17,8 @@
 
 uint8_t test = 0;
 
-uint16_t timer3Period = 200;  // window motor speed
-uint16_t timer2Period = 200;  // lock motor speed
+uint16_t timer3Period = 100;  // window motor speed
+uint16_t timer2Period = 100;  // lock motor speed
 
 // Stepper Globals
 volatile int16_t numOfWStepsLeft = 0;

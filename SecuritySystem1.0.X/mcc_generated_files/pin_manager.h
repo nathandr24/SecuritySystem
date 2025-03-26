@@ -1970,11 +1970,11 @@
   @Example
     <code>
     // Set RD2 high (1)
-    IO_D2_SetHigh();
+    IO_L_SLP_SetHigh();
     </code>
 
 */
-#define IO_D2_SetHigh()          (_LATD2 = 1)
+#define IO_L_SLP_SetHigh()          (_LATD2 = 1)
 /**
   @Summary
     Sets the GPIO pin, RD2, low using LATD2.
@@ -1994,11 +1994,11 @@
   @Example
     <code>
     // Set RD2 low (0)
-    IO_D2_SetLow();
+    IO_L_SLP_SetLow();
     </code>
 
 */
-#define IO_D2_SetLow()           (_LATD2 = 0)
+#define IO_L_SLP_SetLow()           (_LATD2 = 0)
 /**
   @Summary
     Toggles the GPIO pin, RD2, using LATD2.
@@ -2018,11 +2018,11 @@
   @Example
     <code>
     // Toggle RD2
-    IO_D2_Toggle();
+    IO_L_SLP_Toggle();
     </code>
 
 */
-#define IO_D2_Toggle()           (_LATD2 ^= 1)
+#define IO_L_SLP_Toggle()           (_LATD2 ^= 1)
 /**
   @Summary
     Reads the value of the GPIO pin, RD2.
@@ -2044,11 +2044,11 @@
     uint16_t portValue;
 
     // Read RD2
-    postValue = IO_D2_GetValue();
+    postValue = IO_L_SLP_GetValue();
     </code>
 
 */
-#define IO_D2_GetValue()         _RD2
+#define IO_L_SLP_GetValue()         _RD2
 /**
   @Summary
     Configures the GPIO pin, RD2, as an input.
@@ -2068,11 +2068,11 @@
   @Example
     <code>
     // Sets the RD2 as an input
-    IO_D2_SetDigitalInput();
+    IO_L_SLP_SetDigitalInput();
     </code>
 
 */
-#define IO_D2_SetDigitalInput()  (_TRISD2 = 1)
+#define IO_L_SLP_SetDigitalInput()  (_TRISD2 = 1)
 /**
   @Summary
     Configures the GPIO pin, RD2, as an output.
@@ -2092,11 +2092,11 @@
   @Example
     <code>
     // Sets the RD2 as an output
-    IO_D2_SetDigitalOutput();
+    IO_L_SLP_SetDigitalOutput();
     </code>
 
 */
-#define IO_D2_SetDigitalOutput() (_TRISD2 = 0)
+#define IO_L_SLP_SetDigitalOutput() (_TRISD2 = 0)
 /**
   @Summary
     Sets the GPIO pin, RE0, high using LATE0.
@@ -2389,152 +2389,6 @@
 
 */
 #define IO_W_SLP_SetDigitalOutput() (_TRISE1 = 0)
-/**
-  @Summary
-    Sets the GPIO pin, RF1, high using LATF1.
-
-  @Description
-    Sets the GPIO pin, RF1, high using LATF1.
-
-  @Preconditions
-    The RF1 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Set RF1 high (1)
-    IO_L_SLP_SetHigh();
-    </code>
-
-*/
-#define IO_L_SLP_SetHigh()          (_LATF1 = 1)
-/**
-  @Summary
-    Sets the GPIO pin, RF1, low using LATF1.
-
-  @Description
-    Sets the GPIO pin, RF1, low using LATF1.
-
-  @Preconditions
-    The RF1 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Set RF1 low (0)
-    IO_L_SLP_SetLow();
-    </code>
-
-*/
-#define IO_L_SLP_SetLow()           (_LATF1 = 0)
-/**
-  @Summary
-    Toggles the GPIO pin, RF1, using LATF1.
-
-  @Description
-    Toggles the GPIO pin, RF1, using LATF1.
-
-  @Preconditions
-    The RF1 must be set to an output.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Toggle RF1
-    IO_L_SLP_Toggle();
-    </code>
-
-*/
-#define IO_L_SLP_Toggle()           (_LATF1 ^= 1)
-/**
-  @Summary
-    Reads the value of the GPIO pin, RF1.
-
-  @Description
-    Reads the value of the GPIO pin, RF1.
-
-  @Preconditions
-    None.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    uint16_t portValue;
-
-    // Read RF1
-    postValue = IO_L_SLP_GetValue();
-    </code>
-
-*/
-#define IO_L_SLP_GetValue()         _RF1
-/**
-  @Summary
-    Configures the GPIO pin, RF1, as an input.
-
-  @Description
-    Configures the GPIO pin, RF1, as an input.
-
-  @Preconditions
-    None.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Sets the RF1 as an input
-    IO_L_SLP_SetDigitalInput();
-    </code>
-
-*/
-#define IO_L_SLP_SetDigitalInput()  (_TRISF1 = 1)
-/**
-  @Summary
-    Configures the GPIO pin, RF1, as an output.
-
-  @Description
-    Configures the GPIO pin, RF1, as an output.
-
-  @Preconditions
-    None.
-
-  @Returns
-    None.
-
-  @Param
-    None.
-
-  @Example
-    <code>
-    // Sets the RF1 as an output
-    IO_L_SLP_SetDigitalOutput();
-    </code>
-
-*/
-#define IO_L_SLP_SetDigitalOutput() (_TRISF1 = 0)
 /**
   @Summary
     Sets the GPIO pin, RF8, high using LATF8.
