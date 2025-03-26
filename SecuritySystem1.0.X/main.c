@@ -62,6 +62,8 @@ int main(void)
     DELAY_milliseconds(2000);
     Nop();
     
+    IO_LED2_SetHigh();
+    IO_LED3_SetHigh();
     stepWMotor(1000);
     stepLMotor(3000);
     
@@ -72,12 +74,14 @@ int main(void)
         else if(armStatus == 0 && armFlag == 1)
         {
             armSystem();
+            IO_LED4_SetHigh();
             armFlag = 0;
             armStatus = 1;
         }
         else if(armStatus == 1 && disarmFlag == 1)
         {
             disarmSystem();
+            IO_LED4_SetLow();
             disarmFlag = 0;
             armStatus = 0;
         }
