@@ -15,6 +15,8 @@
 #define PASS_NUM_3 9
 #define PASS_NUM_4 8
 
+#define AUTO_TIMER_PERIOD 100
+
 uint8_t test = 0;
 
 uint16_t timer3Period = 100;  // window motor speed
@@ -32,6 +34,10 @@ volatile uint16_t disarmFlag = 0;
 // Keypad Globals
 volatile char state = 0;
 volatile char passCorrect = 1; 
+
+//Auto timer globals
+volatile uint32_t autoTimerCounter = 0;
+volatile uint8_t  autoTimerFlag = 0;
 
 void stepWMotor(int16_t steps); //window motor
 void stepLMotor(int16_t steps); //lock motor
@@ -87,6 +93,12 @@ int main(void)
         }
         else if(armStatus == 1 && armFlag == 1)
             armFlag = 0;
+        
+        if(autoTimerFlag)
+        {
+            IO_LED5_Toggle();
+            autoTimerFlag = 0;
+        }
     }
 
     return 1;
@@ -94,6 +106,13 @@ int main(void)
 
 void TMR1_CallBack(void)
 {
+    autoTimerCounter++;
+    if(autoTimerCounter >= AUTO_TIMER_PERIOD)
+    {
+        autoTimerFlag = 1;
+        autoTimerCounter = 0;
+    }
+    
     UART1_Write('Q');
     uint16_t input = 46;
     
