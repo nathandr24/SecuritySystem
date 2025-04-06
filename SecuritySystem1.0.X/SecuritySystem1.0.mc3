@@ -113,7 +113,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="16 Bit I2CMASTER" name="pubSub16 Bit I2CMASTER_I2C/Functions"/>
-         <value>3346.081767135658</value>
+         <value>4908.893402319517</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="DELAY" name="usecaseComboSettings"/>
@@ -577,7 +577,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="I2CSIMPLE" name="pubSubI2CSIMPLE_I2CMASTER/Functions"/>
-         <value>5143.1716180823905</value>
+         <value>7608.190196644381</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="I2CSIMPLE" name="useCaseComboBoxSettings"/>
@@ -9233,7 +9233,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART" name="pubSubUARTConfigurations"/>
-         <value>8091.518141168344</value>
+         <value>5469.848142911165</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART" name="usecaseComboSettings"/>
@@ -9241,7 +9241,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART" name="validate"/>
-         <value>0.33387602118909543</value>
+         <value>0.6358663269275725</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.PropertyTokenKey" moduleName="UART" name="uartConfigurationList%0%interruptState"/>
@@ -9733,11 +9733,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART2" name="BaudRate"/>
-         <value>115200</value>
+         <value>9600</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART2" name="BaudRateError"/>
-         <value>-0.794</value>
+         <value>-0.080</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART2" name="DataBits"/>
@@ -10025,7 +10025,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="UART2" registerAlias="UBRG"/>
-         <value>34</value>
+         <value>416</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="UART2" registerAlias="UMODE"/>
@@ -10041,7 +10041,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="UART2" registerAlias="UBRG" settingAlias="BRG"/>
-         <value>34</value>
+         <value>416</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="UART2" registerAlias="UERI" settingAlias="context"/>
@@ -10311,7 +10311,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.h</file>
-         <hash>5e6f4242a4ec536c4c697c1b91445bab923d036c95a880e85cfa096c5a8a4433</hash>
+         <hash>85f1a3b554e010eda71981d73d4c151f6c7fb52dacec55a5ecbf6330277d3080</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\oc1.c</file>
@@ -10339,7 +10339,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\system.c</file>
-         <hash>157856b3d856665e0799c00f1d73c41fda0d48c9674eebd6e6b90f6c13e7fbfb</hash>
+         <hash>5a061480bb6b4b5414f4025bc2394a46d8ee878d37ff53e2d061ce48a2121d33</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\system.h</file>
@@ -10395,7 +10395,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\uart2.c</file>
-         <hash>f442a60f782c8092308f7701ec9d674a76b95f594c0e708845fc0e2b66a7a987</hash>
+         <hash>17e70268d1b694457a22bd3a8b899dead8592661190766e7bcafbd63961f60a1</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\uart2.h</file>
