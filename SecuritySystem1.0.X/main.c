@@ -8,8 +8,8 @@
 #include "mcc_generated_files/delay.h"
 #include "mcc_generated_files/tmr1.h"
 
-#define NUM_OF_WINDOW_STEPS     50
-#define NUM_OF_LOCK_STEPS       50
+#define NUM_OF_WINDOW_STEPS     200
+#define NUM_OF_LOCK_STEPS       68
 
 #define PASS_NUM_1 9
 #define PASS_NUM_2 9
@@ -72,7 +72,7 @@ int main(void)
 //    IO_LED2_SetHigh();
 //    IO_LED3_SetHigh();
 //    stepWMotor(1000);
-//    stepLMotor(3000);
+//    stepLMotor(-48);
     
     while (1)
     {
@@ -293,8 +293,6 @@ void stepWMotor(int16_t steps)
     
     IO_W_SLP_SetHigh();
     
-    DELAY_milliseconds(250);
-    
     if(steps > 0)
         IO_W_DIR_SetHigh();
     else
@@ -310,8 +308,6 @@ void stepLMotor(int16_t steps)
     TMR1_Stop(); //stop timer 1 so delays don't harm things
     
     IO_L_SLP_SetHigh();
-    
-    DELAY_milliseconds(250);
     
     if(steps > 0)
         IO_L_DIR_SetHigh();
