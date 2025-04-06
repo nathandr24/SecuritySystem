@@ -65,20 +65,20 @@
 #include "pin_manager.h"
 #include "clock.h"
 #include "system.h"
-#include "oc1.h"
-#include "tmr1.h"
 #include "drivers/i2c_master.h"
 #include "tmr2.h"
-#include "tmr3.h"
+#include "uart2.h"
+#include "tmr1.h"
 #include "tmr4.h"
-#include "delay.h"
+#include "tmr3.h"
 #include "interrupt_manager.h"
 #include "traps.h"
-#include "drivers/i2c_simple_master.h"
-#include "oc4.h"
-#include "uart2.h"
 #include "i2c1_driver.h"
 #include "uart1.h"
+#include "delay.h"
+#include "drivers/i2c_simple_master.h"
+#include "oc1.h"
+#include "oc4.h"
 
 void SYSTEM_Initialize(void)
 {
@@ -89,8 +89,8 @@ void SYSTEM_Initialize(void)
     OC4_Initialize();
     UART1_Initialize();
     TMR3_Initialize();
-    OC1_Initialize();
     TMR4_Initialize();
+    OC1_Initialize();
     TMR2_Initialize();
     TMR1_Initialize();
 }

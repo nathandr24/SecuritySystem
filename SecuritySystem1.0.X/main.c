@@ -40,11 +40,22 @@ volatile char passCorrect = 1;
 volatile uint32_t autoTimerCounter = 0;
 volatile uint8_t  autoTimerFlag = 0;
 
+//Motion sensor globals
+uint16_t trueDistance;
+volatile uint8_t  outerSensorFlag = 0;
+volatile uint8_t  innerSensorFlag = 0;
+
 void stepWMotor(int16_t steps); //window motor
 void stepLMotor(int16_t steps); //lock motor
 
 void armSystem(void);
 void disarmSystem(void);
+
+//motion sensor prototypes
+void readOuterDistance(void);
+void outerTrip(void);
+void readInnerDistance(void);
+void innerTrip(void);
 
 int main(void)
 {
@@ -331,4 +342,83 @@ void disarmSystem(void)
     stepWMotor(-NUM_OF_WINDOW_STEPS);
     stepLMotor(-NUM_OF_LOCK_STEPS);
     IO_LED4_SetLow();
+}
+
+void readOuterDistance(void)
+{
+    IO_OUT_SENSE_SetHigh();
+    
+    DELAY_milliseconds(10);
+    
+    i2c_address_t distanceSensor = 0x40;
+    uint8_t rawDistance[2] = {0,0};
+    rawDistance[1] = i2c_read1ByteRegister(distanceSensor, 0x5E); //bits 11:4
+    rawDistance[0] = i2c_read1ByteRegister(distanceSensor, 0x5F); //bits  3:0
+    trueDistance = ((uint16_t)rawDistance[1]*16 + rawDistance[0])/16/4;        
+        
+    if(trueDistance < 50)
+    {
+        outerTrip();
+    }
+    
+    IO_OUT_SENSE_SetLow();
+}
+
+void outerTrip(void)
+{
+    if(outerSensorFlag == 1)
+    {
+        return;
+    }
+    else if(innerSensorFlag == 1)
+    {
+        DELAY_milliseconds(500);
+        armFlag = 1;
+        innerSensorFlag = 0;
+        return;
+    }
+    else
+    {
+        outerSensorFlag = 1;
+        return;
+    }
+}
+
+void readInnerDistance(void)
+{
+    IO_IN_SENSE_SetHigh();
+    
+    DELAY_milliseconds(10);
+    
+    i2c_address_t distanceSensor = 0x40;
+    uint8_t rawDistance[2] = {0,0};
+    rawDistance[1] = i2c_read1ByteRegister(distanceSensor, 0x5E); //bits 11:4
+    rawDistance[0] = i2c_read1ByteRegister(distanceSensor, 0x5F); //bits  3:0
+    trueDistance = ((uint16_t)rawDistance[1]*16 + rawDistance[0])/16/4;        
+        
+    if(trueDistance < 50)
+    {
+        innerTrip();
+    }
+    
+    IO_IN_SENSE_SetLow();
+}
+
+void innerTrip(void)
+{
+    if(innerSensorFlag == 1)
+    {
+        return;
+    }
+    else if(outerSensorFlag == 1)
+    {
+        DELAY_milliseconds(500);
+        outerSensorFlag = 0;
+        return;
+    }
+    else 
+    {
+        innerSensorFlag = 1;
+        return;
+    }
 }
