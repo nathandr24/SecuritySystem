@@ -69,8 +69,9 @@ int main(void)
 //    DELAY_milliseconds(2000);
 //    Nop();
     
+    
 //    IO_LED2_SetHigh();
-//    IO_LED3_SetHigh();
+    IO_LED3_SetHigh();
 //    stepWMotor(1000);
 //    stepLMotor(-48);
     
@@ -254,11 +255,6 @@ void UART1_Receive_CallBack(void)
 void UART2_Receive_CallBack(void)
 {
     uint8_t a = 0;
-    a = UART2_Read();
-    if(a == 'A')
-        armFlag = 1;
-    else if(a == 'D')
-        disarmFlag = 1;
 }
 
 void TMR3_CallBack(void)

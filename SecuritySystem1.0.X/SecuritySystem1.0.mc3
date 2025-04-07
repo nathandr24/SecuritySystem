@@ -113,7 +113,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="16 Bit I2CMASTER" name="pubSub16 Bit I2CMASTER_I2C/Functions"/>
-         <value>4908.893402319517</value>
+         <value>8458.808417214344</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="DELAY" name="usecaseComboSettings"/>
@@ -577,7 +577,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="I2CSIMPLE" name="pubSubI2CSIMPLE_I2CMASTER/Functions"/>
-         <value>7608.190196644381</value>
+         <value>7784.6432837867715</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="I2CSIMPLE" name="useCaseComboBoxSettings"/>
@@ -9233,7 +9233,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART" name="pubSubUARTConfigurations"/>
-         <value>5469.848142911165</value>
+         <value>847.259649150054</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART" name="usecaseComboSettings"/>
@@ -9241,7 +9241,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART" name="validate"/>
-         <value>0.6358663269275725</value>
+         <value>0.4075781806712808</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.PropertyTokenKey" moduleName="UART" name="uartConfigurationList%0%interruptState"/>
@@ -10311,7 +10311,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.h</file>
-         <hash>85f1a3b554e010eda71981d73d4c151f6c7fb52dacec55a5ecbf6330277d3080</hash>
+         <hash>4c3c9b1327d104e29c50eb039248d85482bd0ac3b0f5449f7d18dd320aa10730</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\oc1.c</file>
@@ -10339,7 +10339,7 @@
       </entry>
       <entry>
          <file>mcc_generated_files\system.c</file>
-         <hash>5a061480bb6b4b5414f4025bc2394a46d8ee878d37ff53e2d061ce48a2121d33</hash>
+         <hash>462320a56b06a91c83d56cff01de9ca49b36bdd131751527181b479d7ec78d89</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\system.h</file>
