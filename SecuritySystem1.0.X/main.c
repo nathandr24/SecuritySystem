@@ -8,7 +8,7 @@
 #include "mcc_generated_files/delay.h"
 #include "mcc_generated_files/tmr1.h"
 
-#define NUM_OF_WINDOW_STEPS     200
+#define NUM_OF_WINDOW_STEPS     3700
 #define NUM_OF_LOCK_STEPS       68
 
 #define PASS_NUM_1 9
@@ -16,11 +16,11 @@
 #define PASS_NUM_3 9
 #define PASS_NUM_4 8
 
-#define AUTO_TIMER_PERIOD 10000
+#define AUTO_TIMER_PERIOD 2
 
 uint8_t test = 0;
 
-uint16_t timer3Period = 200;  // window motor speed
+uint16_t timer3Period = 90;  // window motor speed
 uint16_t timer2Period = 200;  // lock motor speed
 
 // Stepper Globals
@@ -99,6 +99,26 @@ int main(void)
             IO_LED5_Toggle();
             autoTimerFlag = 0;
         }
+        if(UART1_IsRxReady())
+        {
+            uint8_t a;
+            a = UART1_Read();
+            if(a == '1')
+                armFlag = 1;
+            else if(a == '2')
+                disarmFlag = 1;
+            
+            UART1_Disable();
+                if(UART1_IsRxReady())
+                    UART1_Read();
+                if(UART1_IsRxReady())
+                    UART1_Read();
+                if(UART1_IsRxReady())
+                    UART1_Read();
+                if(UART1_IsRxReady())
+                    UART1_Read();
+            UART1_Enable();
+        }
     }
 
     return 1;
@@ -176,14 +196,14 @@ void TMR1_CallBack(void)
     {
         state = 0;
         passCorrect = 1;
-        UART2_Write(0x76); //clear display
+//        UART2_Write(0x76); //clear display
         return;
     }
         
     if(input == 10)     // Time to arm
     {
         armFlag = 1;
-        UART2_Write(0x76); //clear display
+//        UART2_Write(0x76); //clear display
         return;
     }
     else if(state == 0 && input == PASS_NUM_1) // First number correctly entered
@@ -224,7 +244,7 @@ void TMR1_CallBack(void)
     else if(state == 3 && input == PASS_NUM_4) // Fourth number correctly entered
     {
         state = 0;
-        UART2_Write(0xA);UART2_Write(0xA);UART2_Write(0xA);UART2_Write(0xA);
+//        UART2_Write(0xA);UART2_Write(0xA);UART2_Write(0xA);UART2_Write(0xA);
         if(passCorrect)
         {
             disarmFlag = 1;
@@ -233,23 +253,28 @@ void TMR1_CallBack(void)
     }
     else if(state == 3 && input != PASS_NUM_4) // Fourth number incorrectly entered
     {
-        UART2_Write(0xF);UART2_Write(0xF);UART2_Write(0xF);UART2_Write(0xF);
+//        UART2_Write(0xF);UART2_Write(0xF);UART2_Write(0xF);UART2_Write(0xF);
         
         state = 0;
         passCorrect = 0;
         return;
     }
-    UART2_Write(input);
+//    UART2_Write(input);
 }
 
 void UART1_Receive_CallBack(void)
 {
-    uint8_t a = 0;
-    a = UART1_Read();
-    if(a == 'A')
-        armFlag = 1;
-    else if(a == 'D')
-        disarmFlag = 1;
+//    uint8_t a = 0;
+//    a = UART1_Read();
+//    if(a == 'A')
+//        armFlag = 1;
+//    else if(a == 'D')
+//        disarmFlag = 1;
+//    else if(a == 'N')
+//        UART1_Initialize();
+////    else
+////        UART1_Initialize();
+//    
 }
 
 void UART2_Receive_CallBack(void)
@@ -278,7 +303,7 @@ void TMR2_CallBack(void)
         TMR2_Stop();       //Stop the timer
         IO_L_SLP_SetLow(); //Sleep the stepper so it don't burn
         
-        TMR1_Start(); //restart tmr1 so the poll loop can begina again
+        TMR1_Start(); //restart tmr1 so the poll loop can begin again
     }
     
 }
@@ -317,14 +342,14 @@ void stepLMotor(int16_t steps)
 
 void armSystem(void)
 {
-    stepWMotor(NUM_OF_WINDOW_STEPS);
+    stepWMotor(-NUM_OF_WINDOW_STEPS);
     stepLMotor(NUM_OF_LOCK_STEPS);
     IO_LED4_SetHigh();
 }
 
 void disarmSystem(void)
 {
-    stepWMotor(-NUM_OF_WINDOW_STEPS);
+    stepWMotor(NUM_OF_WINDOW_STEPS);
     stepLMotor(-NUM_OF_LOCK_STEPS);
     IO_LED4_SetLow();
 }

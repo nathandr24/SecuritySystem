@@ -51,19 +51,19 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#include "drivers/i2c_simple_master.h"
-#include "drivers/i2c_master.h"
-#include "i2c1_driver.h"
-#include "tmr1.h"
-#include "oc4.h"
-#include "tmr2.h"
-#include "tmr3.h"
 #include "oc1.h"
-#include "tmr4.h"
+#include "drivers/i2c_simple_master.h"
+#include "delay.h"
+#include "i2c1_driver.h"
 #include "interrupt_manager.h"
 #include "traps.h"
-#include "delay.h"
+#include "tmr3.h"
+#include "drivers/i2c_master.h"
+#include "oc4.h"
+#include "tmr4.h"
+#include "tmr1.h"
 #include "uart1.h"
+#include "tmr2.h"
 #include "uart2.h"
 
 #warning "This file will be removed in future MCC releases. Use system.h instead."
